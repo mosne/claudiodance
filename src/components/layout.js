@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 import { rhythm, scale } from "../utils/typography"
 import("../scss/style.scss")
 
@@ -13,9 +13,9 @@ const Layout = (props) => {
     header = (
       <>
         <h1 className="logo">
-          <Link to={`/`}>
+          <AniLink paintDrip to={`/`}>
             {title}
-          </Link>
+          </AniLink>
         </h1>
       </>
     )
@@ -23,7 +23,7 @@ const Layout = (props) => {
     header = (
       <>
         <div className="logo">
-          <Link
+          <AniLink paintDrip
             style={{
               boxShadow: `none`,
               textDecoration: `none`,
@@ -32,7 +32,7 @@ const Layout = (props) => {
             to={`/`}
           >
           {title}
-          </Link>
+          </AniLink>
         </div>
       </>
     )

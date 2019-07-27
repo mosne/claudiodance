@@ -5,6 +5,7 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 
 const CategoryTemplate = (props) => {
   const {
@@ -28,9 +29,9 @@ const CategoryTemplate = (props) => {
                   marginBottom: rhythm(1 / 4),
                 }}
               >
-              <Link style={{ boxShadow: `none` }} to={`${postPrefix}/${node.slug}`}>
+              <AniLink paintDrip style={{ boxShadow: `none` }} to={`${postPrefix}/${node.slug}`}>
                   {node.title}
-                </Link>
+                </AniLink>
               </h3>
               <small>{node.date}</small>
               <p

@@ -5,6 +5,7 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
+import AniLink from "gatsby-plugin-transition-link/AniLink";
 
 const PostTemplate = (props) => {
 
@@ -33,12 +34,12 @@ const PostTemplate = (props) => {
           }}
         >
           <div className="post-date">{post.date}</div>
-          <Link
+          <AniLink paintDrip
             className="cat-link"
             to={`/category/${post.categories[0].slug}`}
           >
             {post.categories[0].name}{' '}
-          </Link>
+          </AniLink>
         </div>
 
         <div dangerouslySetInnerHTML={{ __html: post.content }} />

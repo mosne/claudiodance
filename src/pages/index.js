@@ -5,6 +5,7 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 
 const BlogIndex = (props) => {
   const {
@@ -20,9 +21,9 @@ const BlogIndex = (props) => {
         return (
           <div key={node.slug}>
             <h2>
-              <Link style={{ boxShadow: `none` }} to={`${postPrefix}/${node.slug}`}>
+              <AniLink paintDrip to={`${postPrefix}/${node.slug}`}>
                 {node.title}
-              </Link>
+              </AniLink>
             </h2>
             <small>{node.date}</small>
             <p
