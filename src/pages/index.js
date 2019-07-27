@@ -16,19 +16,14 @@ const BlogIndex = (props) => {
   return (
     <Layout location={props.location} title={title}>
       <SEO title="All posts" />
-      <Bio />
       {posts.map(({ node }) => {
         return (
           <div key={node.slug}>
-            <h3
-              style={{
-                marginBottom: rhythm(1 / 4),
-              }}
-            >
+            <h2>
               <Link style={{ boxShadow: `none` }} to={`${postPrefix}/${node.slug}`}>
                 {node.title}
               </Link>
-            </h3>
+            </h2>
             <small>{node.date}</small>
             <p
               dangerouslySetInnerHTML={{
