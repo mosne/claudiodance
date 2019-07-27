@@ -1,3 +1,5 @@
+const postCssPlugins = require('./postcss-config.js');
+
 module.exports = {
   siteMetadata: {
     title: `Claudio Dance`,
@@ -71,5 +73,24 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
+    {
+      resolve: "gatsby-plugin-sass",
+      options: {
+        postCssPlugins: [...postCssPlugins],
+        cssLoaderOptions: {
+          camelCase: false,
+        },
+      },
+    },
+    {
+      // Removes unused css rules
+      resolve:'gatsby-plugin-purgecss',
+      options: {
+        // Activates purging in gatsby develop
+        develop: true,
+        // Purge only the main css file
+        purgeOnly: ['/style.scss'],
+      },
+    }, // must be after other CSS plugins
   ],
 }
