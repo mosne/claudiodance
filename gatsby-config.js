@@ -41,10 +41,14 @@ module.exports = {
         auth: {},
         // Set to true to debug endpoints on 'gatsby build'
         verboseOutput: true,
-        excludedRoutes: [
-          "/*/*/comments",
-          "/yoast/**",
-          "/oembed/*"
+        includedRoutes: [
+          "**/categories",
+          "**/posts",
+          "**/pages",
+          "**/media",
+          "**/tags",
+          "**/taxonomies",
+          "**/menu"
         ],
         normalizer: function({ entities }) {
           return entities
