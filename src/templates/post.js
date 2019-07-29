@@ -27,7 +27,7 @@ const PostTemplate = (props) => {
         <h1>{post.title} </h1>
         {featuredImage &&
               <Img
-              style={{maxWidth:600}}
+              style={{maxWidth:900}}
               fluid={featuredImage}
               title={post.title}
               className="featured-image" />
@@ -79,7 +79,7 @@ export const pageQuery = graphql`
       featured_media {
         localFile {
           childImageSharp {
-            fluid(maxWidth: 600, quality: 70){
+            fluid(maxWidth: 900, quality: 90){
             ...GatsbyImageSharpFluid
             }
           }
