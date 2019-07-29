@@ -3,9 +3,9 @@ const postCssPlugins = require('./postcss-config.js');
 module.exports = {
   siteMetadata: {
     title: `Claudio Dance`,
-    author: `Graphic design and more`,
+    author: `Claudio Fabbro Graphic design and more`,
     description: `A Gatsby WordPress Starter with special love for Netlify`,
-    siteUrl: `https://claudiodance.netlify.com`,
+    siteUrl: `https://claudio.dance`,
     social: {
       twitter: `claudiodance`,
     },
@@ -52,7 +52,7 @@ module.exports = {
           "**/taxonomies",
           "**/menu"
         ],
-        normalizer: function({ entities }) {
+        normalizer({ entities }) {
           return entities
         },
       }
@@ -62,7 +62,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        //trackingId: `ADD YOUR TRACKING ID HERE`,
+        // trackingId: `ADD YOUR TRACKING ID HERE`,
       },
     },
     `gatsby-plugin-offline`,

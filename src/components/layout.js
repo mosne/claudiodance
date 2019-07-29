@@ -1,8 +1,8 @@
-import React from "react"
-import { Link } from "gatsby"
-import AniLink from "gatsby-plugin-transition-link/AniLink"
-import { rhythm, scale } from "../utils/typography"
-import("../scss/style.scss")
+import React from 'react'
+import { Link } from 'gatsby'
+import AniLink from 'gatsby-plugin-transition-link/AniLink'
+import { rhythm, scale } from '../utils/typography'
+import '../scss/style.scss'
 
 const Layout = (props) => {
   const { location, title, children } = props

@@ -11,8 +11,8 @@ const BlogIndex = (props) => {
   const {
     title,
     postPrefix,
-  } = props.data.site.siteMetadata;
-  const posts = props.data.allWordpressPost.edges;
+  } = props.data.site.siteMetadata
+  const posts = props.data.allWordpressPost.edges
 
   return (
     <Layout location={props.location} title={title}>

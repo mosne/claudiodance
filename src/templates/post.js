@@ -1,11 +1,12 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
-
-import Bio from "../components/bio"
+import { graphql } from 'gatsby'
+import Img from "gatsby-image"
+// import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
 import AniLink from "gatsby-plugin-transition-link/AniLink";
+
 
 const PostTemplate = (props) => {
 
@@ -14,7 +15,7 @@ const PostTemplate = (props) => {
   let featuredImage = false;
 
   if (post.featured_media && post.featured_media.source_url ) {
-    featuredImage = post.featured_media.source_url;
+    featuredImage = post.featured_media.localFile.childImageSharp.fluid;
   }
 
   return (
@@ -25,7 +26,11 @@ const PostTemplate = (props) => {
       />
         <h1>{post.title} </h1>
         {featuredImage &&
-              <img src={featuredImage} alt={post.title} className="featured-image" />
+              <Img
+              style={{maxWidth:600}}
+              fluid={featuredImage}
+              title={post.title}
+              className="featured-image" />
         }
         <div
           className="post-meta"
@@ -48,7 +53,7 @@ const PostTemplate = (props) => {
           marginBottom: rhythm(1),
         }}
         />
-      <Bio />
+
     </Layout>
   )
 
@@ -72,6 +77,14 @@ export const pageQuery = graphql`
       excerpt
       id
       featured_media {
+        localFile {
+          childImageSharp {
+            fluid(maxWidth: 600, quality: 70){
+            ...GatsbyImageSharpFluid
+            }
+          }
+          relativePath
+        }
         source_url
       }
       categories {
