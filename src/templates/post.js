@@ -4,9 +4,7 @@ import Img from "gatsby-image"
 // import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { rhythm } from "../utils/typography"
 import AniLink from "gatsby-plugin-transition-link/AniLink";
-
 
 const PostTemplate = (props) => {
 
@@ -20,7 +18,7 @@ const PostTemplate = (props) => {
 
   return (
     <Layout location={props.location} title={siteTitle}>
-      <SEO
+       <SEO
         title={post.title}
         description={post.excerpt}
       />
@@ -34,9 +32,6 @@ const PostTemplate = (props) => {
         }
         <div
           className="post-meta"
-          style={{
-            marginBottom: rhythm(1),
-          }}
         >
           <div className="post-date">{post.date}</div>
           <AniLink paintDrip
@@ -48,12 +43,6 @@ const PostTemplate = (props) => {
         </div>
 
         <div dangerouslySetInnerHTML={{ __html: post.content }} />
-        <hr
-        style={{
-          marginBottom: rhythm(1),
-        }}
-        />
-
     </Layout>
   )
 

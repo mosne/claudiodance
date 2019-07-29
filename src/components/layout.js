@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import AniLink from 'gatsby-plugin-transition-link/AniLink'
-import { rhythm, scale } from '../utils/typography'
 import '../scss/style.scss'
+import Mosnecursor from './cursor';
 
 const Layout = (props) => {
   const { location, title, children } = props
@@ -12,7 +12,7 @@ const Layout = (props) => {
   if (location.pathname === rootPath) {
     header = (
       <>
-        <h1 className="logo">
+        <h1 className="header__logo">
           <AniLink paintDrip to={`/`}>
             {title}
           </AniLink>
@@ -22,13 +22,8 @@ const Layout = (props) => {
   } else {
     header = (
       <>
-        <div className="logo">
+        <div className="header__logo">
           <AniLink paintDrip
-            style={{
-              boxShadow: `none`,
-              textDecoration: `none`,
-              color: `inherit`,
-            }}
             to={`/`}
           >
           {title}
@@ -38,12 +33,19 @@ const Layout = (props) => {
     )
   }
   return (
-    <div>
-      <header>{header}</header>
-      <main>{children}</main>
+    <div className="main">
+      <header className="header">{header}</header>
+      <main className="main__content">{children}</main>
       <footer>
         footer
       </footer>
+      <div className="custom-cursor">
+        <div className="cursor"></div>
+      </div>
+      <div className="custom-cursor custom-cursor-too">
+        <div className="cursor"></div>
+      </div>
+      <Mosnecursor></Mosnecursor>
     </div>
   )
 }

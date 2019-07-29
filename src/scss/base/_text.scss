@@ -22,6 +22,11 @@
  * </div>
  */
 
+html,
+body{
+	background: $darkcolor;
+}
+
 body {
 	font-size: $base-fz;
 	line-height: $base-lh;

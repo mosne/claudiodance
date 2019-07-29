@@ -4,7 +4,6 @@ import { Link, graphql } from "gatsby"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { rhythm } from "../utils/typography"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
 
 const CategoryTemplate = (props) => {
@@ -24,11 +23,7 @@ const CategoryTemplate = (props) => {
         {posts.map(({ node }) => {
           return (
             <div key={node.slug}>
-              <h3
-                style={{
-                  marginBottom: rhythm(1 / 4),
-                }}
-              >
+              <h3>
               <AniLink paintDrip style={{ boxShadow: `none` }} to={`${postPrefix}/${node.slug}`}>
                   {node.title}
                 </AniLink>
@@ -42,13 +37,7 @@ const CategoryTemplate = (props) => {
             </div>
           )
         })}
-        <hr
-        style={{
-          marginBottom: rhythm(1),
-        }}
-        />
-      <Bio />
-    </Layout>
+      </Layout>
   )
 }
 

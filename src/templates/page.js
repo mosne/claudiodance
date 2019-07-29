@@ -4,7 +4,6 @@ import { graphql } from "gatsby"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { rhythm } from "../utils/typography"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
 
 const PageTemplate = (props) => {
@@ -20,12 +19,6 @@ const PageTemplate = (props) => {
       />
         <h1>{post.title} </h1>
         <div dangerouslySetInnerHTML={{ __html: post.content }} />
-        <hr
-        style={{
-          marginBottom: rhythm(1),
-        }}
-        />
-      <Bio />
     </Layout>
   )
 }
