@@ -3,27 +3,7 @@ import React from "react"
 
 const Mosnecursor = (props) => {
 
-    /*
-  const node = document.createElement(`div`);
-  const nodetoo = document.createElement(`div`);
-
-  node.id = `mosne-curr`;
-  nodetoo.id = `mosne-curr-too`;
-
-  node.className = `custom-cursor`
-  nodetoo.className = `custom-cursor`
-
-  document.getElementsByTagName('body')[0].appendChild(node)
-  document.getElementsByTagName('body')[0].appendChild(nodetoo)
- const cursor = document.createElement('div')
-  cursor.className = `cursor`
-
-  node.appendChild(cursor)
-  nodetoo.appendChild(cursor)
-
-  */
-
-    const mcurr = document.getElementsByClassName(`custom-cursor`)
+    const mcurr = window.document.getElementsByClassName(`custom-cursor`)
 
     window.addEventListener(`mousemove`, (e) => {
       window.requestAnimationFrame(() => {
@@ -40,7 +20,7 @@ const Mosnecursor = (props) => {
       })
     })
 
-    const alinks = document.querySelectorAll("a")
+    const alinks = window.document.querySelectorAll("a")
     alinks.forEach(element => {
 
         element.addEventListener(`mouseenter`, () => {
@@ -57,7 +37,7 @@ const Mosnecursor = (props) => {
 
       })
 
-      const imgitems = document.querySelectorAll(".featured-image")
+      const imgitems = window.document.querySelectorAll(".featured-image")
       imgitems.forEach(element => {
   
           element.addEventListener(`mouseenter`, () => {
