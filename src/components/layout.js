@@ -13,7 +13,7 @@ const Layout = (props) => {
     header = (
       <>
         <h1 className="header__logo">
-          <AniLink paintDrip to={`/`}>
+          <AniLink paintDrip hex="#F1E25B" to={`/`}>
             {title}
           </AniLink>
         </h1>
@@ -23,7 +23,7 @@ const Layout = (props) => {
     header = (
       <>
         <div className="header__logo">
-          <AniLink paintDrip
+          <AniLink paintDrip hex="#F1E25B"
             to={`/`}
           >
           {title}

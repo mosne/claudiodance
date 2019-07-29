@@ -34,7 +34,8 @@ const PostTemplate = (props) => {
           className="post-meta"
         >
           <div className="post-date">{post.date}</div>
-          <AniLink paintDrip
+          <AniLink
+            paintDrip hex="#F1E25B"
             className="cat-link"
             to={`/category/${post.categories[0].slug}`}
           >

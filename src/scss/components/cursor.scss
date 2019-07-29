@@ -70,12 +70,12 @@ body:hover .custom-cursor {
 	opacity: 1;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 900px) {
 	.custom-cursor {
 		display: none !important;
 	}
 }
 
-.img {
+.featured-image {
 	position: relative;
 }

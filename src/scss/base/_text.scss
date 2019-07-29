@@ -29,6 +29,7 @@ body{
 
 body {
 	font-size: $base-fz;
+	font-size: 3em;
 	line-height: $base-lh;
 	font-family: $customfont-1;
 	color: $textcolor;
@@ -45,9 +46,12 @@ body {
 a {
 	color: $textcolor;
 	text-decoration: none;
+	box-shadow: none;
+	ext-decoration: underline;
 
 	@include hover {
 		color: $textcolor;
+		ext-decoration: underline;
 	}
 }
 
@@ -56,9 +60,8 @@ a {
 @for $i from 1 through 6 {
 	h#{$i} {
 		line-height: $heading-line-height;
-		font-size: $heading-font-size - ($i - 1) * 2px;
 		font-family: $customfont-2;
-
+		font-size: 3rem;
 		.fonts-loading & {
 			font-family: $font-sansserif;
 		}

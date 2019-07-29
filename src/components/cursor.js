@@ -41,24 +41,40 @@ const Mosnecursor = (props) => {
     })
 
     const alinks = document.querySelectorAll("a")
-    console.log(alinks)
     alinks.forEach(element => {
 
         element.addEventListener(`mouseenter`, () => {
           mcurr[0].classList.add("custom-cursor-active")
           mcurr[1].classList.add("custom-cursor-active")
-          console.log(mcurr[0],mcurr[1],'hover')
+          // console.log(mcurr[0],mcurr[1],'hover')
         })
 
         element.addEventListener(`mouseleave`, () => {
           mcurr[0].classList.remove("custom-cursor-active")
           mcurr[1].classList.remove("custom-cursor-active")
-          console.log('out')
+          // console.log('out')
         })
 
       })
-      
-      return null
+
+      const imgitems = document.querySelectorAll(".featured-image")
+      imgitems.forEach(element => {
+  
+          element.addEventListener(`mouseenter`, () => {
+            mcurr[0].classList.add("custom-cursor-active-img")
+            mcurr[1].classList.add("custom-cursor-active-img")
+            // console.log(mcurr[0],mcurr[1],'hover')
+          })
+  
+          element.addEventListener(`mouseleave`, () => {
+            mcurr[0].classList.remove("custom-cursor-active-img")
+            mcurr[1].classList.remove("custom-cursor-active-img")
+            // console.log('out')
+          })
+  
+        })
+
+        return null
 
     }
 
