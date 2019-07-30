@@ -39,12 +39,6 @@ const Layout = (props) => {
       <footer>
         footer
       </footer>
-      <div className="custom-cursor">
-        <div className="cursor"></div>
-      </div>
-      <div className="custom-cursor custom-cursor-too">
-        <div className="cursor"></div>
-      </div>
       <Mosnecursor></Mosnecursor>
     </div>
   )
