@@ -3,7 +3,7 @@ import React from "react"
 
 const Mosnecursor = () => {
 
-  if (typeof window === 'undefined') {
+  if (typeof window !== 'undefined') {
 
     const mcurr = window.document.getElementsByClassName(`custom-cursor`)
 
