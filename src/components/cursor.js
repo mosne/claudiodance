@@ -4,8 +4,7 @@ import React from "react"
 const Mosnecursor = () => {
 
   if (typeof window === 'undefined') {
-    global.window = {}
-  }
+
     const mcurr = window.document.getElementsByClassName(`custom-cursor`)
 
     window.addEventListener(`mousemove`, (e) => {
@@ -42,21 +41,24 @@ const Mosnecursor = () => {
 
       const imgitems = window.document.querySelectorAll(".featured-image")
       imgitems.forEach(element => {
-  
+
           element.addEventListener(`mouseenter`, () => {
             mcurr[0].classList.add("custom-cursor-active-img")
             mcurr[1].classList.add("custom-cursor-active-img")
             // console.log(mcurr[0],mcurr[1],'hover')
           })
-  
+
           element.addEventListener(`mouseleave`, () => {
             mcurr[0].classList.remove("custom-cursor-active-img")
             mcurr[1].classList.remove("custom-cursor-active-img")
             // console.log('out')
           })
-  
-        })
 
+
+        
+
+        })
+      }
         return null
 
     }
