@@ -1,8 +1,11 @@
 // Mosne custom cursor
 import React from "react"
 
-const Mosnecursor = (props) => {
+const Mosnecursor = () => {
 
+  if (typeof window === 'undefined') {
+    global.window = {}
+  }
     const mcurr = window.document.getElementsByClassName(`custom-cursor`)
 
     window.addEventListener(`mousemove`, (e) => {
