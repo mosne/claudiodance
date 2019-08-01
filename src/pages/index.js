@@ -20,7 +20,12 @@ const BlogIndex = (props) => {
         return (
           <div key={node.slug}>
             <h2>
-              <AniLink paintDrip hex="#F1E25B" to={`${postPrefix}/${node.slug}`}>
+              <AniLink
+                paintDrip
+                hex="#F1E25B"
+                direction="bottom"
+                to={`${postPrefix}/${node.slug}`}
+              >
                 {node.title}
               </AniLink>
             </h2>

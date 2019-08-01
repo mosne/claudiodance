@@ -5,11 +5,11 @@ const Mosnecursor = () => {
 
   if (typeof window !== 'undefined') {
 
-    let currhtml = document.createElement('div')
+    const currHtml = document.createElement('div')
     const currstr = `<div class="custom-cursor"><div class="cursor"></div></div><div class="custom-cursor custom-cursor-too"><div class="cursor"></div></div>`
-    currhtml.innerHTML = currstr;
+    currHtml.innerHTML = currstr;
     const mainwrapper = window.document.getElementById(`___gatsby`)
-    mainwrapper.appendChild(currhtml)
+    mainwrapper.appendChild(currHtml)
 
     const mcurr = window.document.getElementsByClassName(`custom-cursor`)
 

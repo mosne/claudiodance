@@ -24,8 +24,14 @@ const CategoryTemplate = (props) => {
           return (
             <div key={node.slug}>
               <h3>
-              <AniLink paintDrip hex="#F1E25B" style={{ boxShadow: `none` }} to={`${postPrefix}/${node.slug}`}>
-                  {node.title}
+                <AniLink
+                  paintDrip
+                  hex="#F1E25B"
+                  direction="bottom"
+                  style={{ boxShadow: `none` }}
+                  to={`${postPrefix}/${node.slug}`}
+                >
+                 {node.title}
                 </AniLink>
               </h3>
               <small>{node.date}</small>
