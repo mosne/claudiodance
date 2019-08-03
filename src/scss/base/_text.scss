@@ -22,6 +22,15 @@
  * </div>
  */
 
+$min_width: 320px;
+$max_width: 1880px;
+$min_font: 30px;
+$max_font: 90px;
+
+html{
+	@include fluid-type($min_width, $max_width, $min_font, $max_font);
+}
+
 html,
 body{
 	background: $darkcolor;
@@ -30,7 +39,7 @@ body{
 
 body {
 	font-size: $base-fz;
-	font-size: 3em;
+	font-size: 1rem;
 	line-height: $base-lh;
 	font-family: $customfont-1;
 	color: $textcolor;
@@ -62,7 +71,8 @@ a {
 	h#{$i} {
 		line-height: $heading-line-height;
 		font-family: $customfont-2;
-		font-size: 3rem;
+		font-size: 1.7em;
+		font-weight: 400;
 		.fonts-loading & {
 			font-family: $font-sansserif;
 		}
@@ -232,4 +242,17 @@ sup {
 
 sup {
 	top: -0.5em;
+}
+
+h2{
+	text-transform: uppercase;
+}
+
+h2 a {
+	span{
+	text-decoration: underline;
+	}
+	&:hover span{
+		text-decoration: none;
+	}
 }

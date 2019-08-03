@@ -26,7 +26,7 @@ const CategoryTemplate = (props) => {
               <h3>
                 <AniLink
                   paintDrip
-                  hex="#F1E25B"
+                  hex="#FFF700"
                   direction="bottom"
                   style={{ boxShadow: `none` }}
                   to={`${postPrefix}/${node.slug}`}

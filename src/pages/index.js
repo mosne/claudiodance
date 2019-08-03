@@ -17,24 +17,22 @@ const BlogIndex = (props) => {
     <Layout location={props.location} title={title}>
       <SEO title="All posts" />
       {posts.map(({ node }) => {
+
+        let spannedTitle = node.title.split(" ").join('</span> <span>')
+
         return (
           <div key={node.slug}>
             <h2>
               <AniLink
                 paintDrip
-                hex="#F1E25B"
+                hex="#FFF700"
                 direction="bottom"
                 to={`${postPrefix}/${node.slug}`}
-              >
-                {node.title}
-              </AniLink>
+                dangerouslySetInnerHTML={{
+                  __html: '<span>' + spannedTitle + '</span>',
+                }}
+              />
             </h2>
-            <small>{node.date}</small>
-            <p
-              dangerouslySetInnerHTML={{
-                __html: node.excerpt,
-              }}
-            />
           </div>
         )
       })}

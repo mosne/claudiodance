@@ -15,7 +15,7 @@ const Layout = (props) => {
         <h1 className="header__logo">
           <AniLink 
             paintDrip
-            hex="#F1E25B"
+            hex="#FFF700"
             direction="bottom"
             to={`/`}
           >
@@ -30,7 +30,7 @@ const Layout = (props) => {
         <div className="header__logo">
           <AniLink
             paintDrip
-            hex="#F1E25B"
+            hex="#FFF700"
             direction="bottom"
             to={`/`}
           >
