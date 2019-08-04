@@ -37,6 +37,7 @@
 	transform: scale(1.5);
 	opacity: 1;
 	background: #fff;
+	border: 3px solid $maincolor;
 }
 
 .custom-cursor-too {
@@ -45,7 +46,7 @@
 
 
 .custom-cursor.custom-cursor-active-img {
-	mix-blend-mode: maincolor;
+	mix-blend-mode: color;
 
 	.cursor {
 		transform: scale(1.5);

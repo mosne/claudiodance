@@ -25,7 +25,7 @@ const PostTemplate = (props) => {
         <h1>{post.title} </h1>
         {featuredImage &&
               <Img
-              style={{maxWidth:900}}
+              style={{maxWidth:1880}}
               fluid={featuredImage}
               title={post.title}
               className="featured-image" />

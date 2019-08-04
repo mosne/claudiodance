@@ -1,17 +1,27 @@
 // Mosne custom cursor
 import React from "react"
 
+
+
 const Mosnecursor = () => {
 
   if (typeof window !== 'undefined') {
 
-    const currHtml = document.createElement('div')
-    const currstr = `<div class="custom-cursor"><div class="cursor"></div></div><div class="custom-cursor custom-cursor-too"><div class="cursor"></div></div>`
-    currHtml.innerHTML = currstr;
-    const mainwrapper = window.document.getElementById(`___gatsby`)
-    mainwrapper.appendChild(currHtml)
+    const initMosnecursor = () =>  {
+      const currHtml = document.createElement('div')
+      const currstr = `<div class="custom-cursor"><div class="cursor"></div></div><div class="custom-cursor custom-cursor-too"><div class="cursor"></div></div>`
+      currHtml.innerHTML = currstr;
+      const mainwrapper = window.document.getElementById(`___gatsby`)
+      mainwrapper.appendChild(currHtml)
+    }
 
     const mcurr = window.document.getElementsByClassName(`custom-cursor`)
+
+    if (mcurr.length === 2){
+      console.log('total cursor',mcurr.length)
+    }else{
+      initMosnecursor()
+    }
 
     window.addEventListener(`mousemove`, (e) => {
       window.requestAnimationFrame(() => {
