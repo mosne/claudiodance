@@ -43,14 +43,16 @@ module.exports = {
         auth: {},
         // Set to true to debug endpoints on 'gatsby build'
         verboseOutput: true,
+        perPage : 100,
+        concurrentRequests: 20,
         includedRoutes: [
-          "**/categories",
-          "**/posts",
-          "**/pages",
-          "**/media",
-          "**/tags",
-          "**/taxonomies",
-          "**/menu"
+          "/wp/v2/categories",
+          "/wp/v2/posts",
+          "/wp/v2/pages",
+          "/wp/v2/media",
+          "/wp/v2/tags",
+          "/wp/v2/taxonomies",
+          "/wp/v2/menu"
         ],
         normalizer({ entities }) {
           return entities
