@@ -1,20 +1,25 @@
 import React from "react"
 import { graphql } from 'gatsby'
 import Img from "gatsby-image"
-// import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import AniLink from "gatsby-plugin-transition-link/AniLink";
+import AniLink from "gatsby-plugin-transition-link/AniLink"
+import FlexibleAcf from "../components/FlexibleAcf"
 
 const PostTemplate = (props) => {
 
   const post = props.data.wordpressPost;
   const siteTitle = props.data.site.siteMetadata.title;
   let featuredImage = false;
-
+ 
   if (post.featured_media && post.featured_media.source_url ) {
     featuredImage = post.featured_media.localFile.childImageSharp.fluid;
   }
+
+  if (post.slides_post){
+    slidePost = post.slides_post
+  }
+
 
   return (
     <Layout location={props.location} title={siteTitle}>
@@ -30,6 +35,10 @@ const PostTemplate = (props) => {
               title={post.title}
               className="featured-image" />
         }
+        <FlexibleAcf
+              post={post}
+              slides={post.slides_post}
+        />
         <div
           className="post-meta"
         >
