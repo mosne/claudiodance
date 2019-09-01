@@ -84,6 +84,93 @@ export const pageQuery = graphql`
         slug
       }
       content
+      acf {
+        slides_post {
+          ... on WordPressAcf_video {
+            id
+            video_url
+            video_file
+            image {
+              id
+              title
+              alt_text
+              caption
+              localFile {
+                childImageSharp {
+                  fluid(maxWidth: 900, quality: 90){
+                  ...GatsbyImageSharpFluid
+                  }
+                }
+                relativePath
+              }
+            }
+            internal {
+              type
+            }
+          }
+          ... on WordPressAcf_text {
+            id
+            text
+            internal {
+              type
+            }
+          }
+          ... on WordPressAcf_double {
+            id
+            image {
+              id
+              title
+              alt_text
+              caption
+              localFile {
+                childImageSharp {
+                  fluid(maxWidth: 450, quality: 90){
+                  ...GatsbyImageSharpFluid
+                  }
+                }
+                relativePath
+              }
+            }
+            image_2 {
+              id
+              title
+              alt_text
+              caption
+              localFile {
+                childImageSharp {
+                  fluid(maxWidth: 450, quality: 90){
+                  ...GatsbyImageSharpFluid
+                  }
+                }
+                relativePath
+              }
+            }
+            internal {
+              type
+            }
+          }
+          ... on WordPressAcf_gallery {
+            id
+            images {
+              id
+              title
+              alt_text
+              caption
+              localFile {
+                childImageSharp {
+                  fluid(maxWidth: 900, quality: 90){
+                  ...GatsbyImageSharpFluid
+                  }
+                }
+                relativePath
+              }
+            }
+            internal {
+              type
+            }
+          }
+        }
+      }
     }
   }
 `
