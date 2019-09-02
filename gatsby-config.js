@@ -11,6 +11,8 @@ module.exports = {
     },
     postPrefix : '/projects',
     pagePrefix: '',
+    imagefull: 1024,
+    imagehalf: 512,
   },
   plugins: [
     {

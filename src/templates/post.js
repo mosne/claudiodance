@@ -10,6 +10,7 @@ const PostTemplate = (props) => {
 
   const post = props.data.wordpressPost;
   const siteTitle = props.data.site.siteMetadata.title;
+  const meta = props.data.site.siteMetadata;
   let featuredImage = false;
  
   if (post.featured_media && post.featured_media.source_url ) {
@@ -30,14 +31,14 @@ const PostTemplate = (props) => {
         <h1>{post.title} </h1>
         {featuredImage &&
               <Img
-              style={{maxWidth:1880}}
+              style={{maxWidth:meta.imagefull}}
               fluid={featuredImage}
               title={post.title}
               className="featured-image" />
         }
         <FlexibleAcf
               post={post}
-              slides={post.slides_post}
+              meta={meta}
         />
         <div
           className="post-meta"
@@ -68,6 +69,8 @@ export const pageQuery = graphql`
       siteMetadata {
         title
         author
+        imagefull
+        imagehalf
       }
     }
     wordpressPost(id: { eq: $id }) {
@@ -80,7 +83,7 @@ export const pageQuery = graphql`
       featured_media {
         localFile {
           childImageSharp {
-            fluid(maxWidth: 900, quality: 90){
+            fluid(maxWidth: 1800, quality: 90){
             ...GatsbyImageSharpFluid
             }
           }
@@ -106,7 +109,7 @@ export const pageQuery = graphql`
               caption
               localFile {
                 childImageSharp {
-                  fluid(maxWidth: 900, quality: 90){
+                  fluid(maxWidth: 1800, quality: 90){
                   ...GatsbyImageSharpFluid
                   }
                 }
@@ -133,7 +136,7 @@ export const pageQuery = graphql`
               caption
               localFile {
                 childImageSharp {
-                  fluid(maxWidth: 450, quality: 90){
+                  fluid(maxWidth: 900, quality: 90){
                   ...GatsbyImageSharpFluid
                   }
                 }
@@ -147,7 +150,7 @@ export const pageQuery = graphql`
               caption
               localFile {
                 childImageSharp {
-                  fluid(maxWidth: 450, quality: 90){
+                  fluid(maxWidth: 900, quality: 90){
                   ...GatsbyImageSharpFluid
                   }
                 }
@@ -167,7 +170,7 @@ export const pageQuery = graphql`
               caption
               localFile {
                 childImageSharp {
-                  fluid(maxWidth: 900, quality: 90){
+                  fluid(maxWidth: 1800, quality: 90){
                   ...GatsbyImageSharpFluid
                   }
                 }

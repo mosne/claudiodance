@@ -31,6 +31,8 @@ export const pageQuery = graphql`
       siteMetadata {
         title
         author
+        imagefull
+        imagehalf
       }
     }
     wordpressPage(id: { eq: $id }) {
