@@ -5,9 +5,15 @@ import React from 'react';
 import Img from "gatsby-image"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
 
+
+
 const FlexibleAcf = (props) => {
   const { post, meta } = props
   let slideAcf = true;
+  const imgSizes = {
+    full : 1840,
+    half : 910,
+  }
 
   slideAcf = (
     <div className='post__text'>
@@ -22,16 +28,15 @@ const FlexibleAcf = (props) => {
                  * Gallery
                  **/
                 <div className='post__gallery'>
-                  <h2>ACF Image Gallery</h2>
                   {layout.images && layout.images.map((photo) => {
 
                     const img = photo.localFile.childImageSharp.fluid
                     return (
-                      <div>
+                      <div class="post__image">
                       {img && <Img
-                            style={{maxWidth:meta.imagefull}}
+                            style={{maxWidth:imgSizes.full}}
                             fluid={img}
-                            title={post.title}
+                            alt={photo.title}
                             className="featured-image" />}
                       </div>
                     )
@@ -48,17 +53,17 @@ const FlexibleAcf = (props) => {
                  * Double
                  **/
                 <div className='post__double'>
-                  <h2>ACF Post Photo</h2>
-                  {console.log('size', meta.imagehalf)}
+
+                  {console.log('size', imgSizes.half)}
                   {img && <Img
-                            style={{maxWidth:meta.imagehalf}}
+                            style={{maxWidth:imgSizes.half}}
                             fluid={img}
-                            title={post.title}
+                            alt={layout.image.title}
                             className="featured-image" />}
                   {img2 && <Img
-                            style={{maxWidth:meta.imagehalf}}
+                            style={{maxWidth:imgSizes.half}}
                             fluid={img2}
-                            title={post.title}
+                            alt={layout.image_2.title}
                             className="featured-image" />}
                 </div>
               )
@@ -69,7 +74,6 @@ const FlexibleAcf = (props) => {
                  * Text
                  **/
                 <div className='post__text'>
-                  <h2>ACF text</h2>
                   <div dangerouslySetInnerHTML={{ __html: txt }} />
                 </div>
               )
@@ -82,11 +86,10 @@ const FlexibleAcf = (props) => {
                  * Video
                  **/
                  <div className='post__video'>
-                  <h2>ACF video</h2>
                   {img && <Img
-                            style={{maxWidth:meta.imagefull}}
+                            style={{maxWidth:imgSizes.full}}
                             fluid={img}
-                            title={post.title}
+                            alt={layout.image.title}
                             className="featured-image" />}
                   <div dangerouslySetInnerHTML={{ __html: "video" }} />
                 </div>

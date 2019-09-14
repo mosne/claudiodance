@@ -1,0 +1,28 @@
+.post{
+
+	$gap : 20px;
+	$spacer : 74px;
+
+	&__image{
+		margin-bottom: $spacer;
+	}
+
+	&__loop{
+		margin-bottom: $spacer;
+	}
+
+	&__video{
+		margin-bottom: $spacer;
+	}
+	&__text{
+		margin-bottom: $spacer;
+	}
+
+	&__double{
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-gap: $gap;
+		margin-bottom: $spacer;
+	}
+
+}
