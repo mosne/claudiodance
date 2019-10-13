@@ -40,8 +40,11 @@ const PostTemplate = (props) => {
               post={post}
               meta={meta}
         />
+
+        <div className="post__content" dangerouslySetInnerHTML={{ __html: post.content }} />
+
         <div
-          className="post-meta"
+          className="post__meta"
         >
           <div className="post-date">{post.date}</div>
           <AniLink
@@ -55,7 +58,6 @@ const PostTemplate = (props) => {
           </AniLink>
         </div>
 
-        <div dangerouslySetInnerHTML={{ __html: post.content }} />
     </Layout>
   )
 
@@ -78,6 +80,7 @@ export const pageQuery = graphql`
       slug
       title
       modified
+      content
       excerpt
       id
       featured_media {
