@@ -1,20 +1,26 @@
 import React from 'react'
 import Img from 'gatsby-image'
 
-const MosneVideo = (props) => {
-  const {img, url, size, image} = props
 
-  let state = {
-    showVideo: false
-  };
 
-  // function to handle the click
-  let toggleVideo = () =>{
-    state.showVideo = true
-    console.log(state)
+export default class MosneVideo extends React.Component {
+
+  constructor(props){
+    super()
+    this.state = {
+      ShowVideo: true
+    }
   }
 
-  const convertVideo = (url) => {
+  toggleVideo (e) {
+    e.preventDefault()
+    this.setState({
+      ShowVideo: false
+    })
+    console.log("fired",this)
+  }
+
+  convertVideo(url){
     const input = url
     let final
     // console.log(input, url)
