@@ -1,23 +1,21 @@
 import React from 'react'
 import Img from 'gatsby-image'
 
-
-
 export default class MosneVideo extends React.Component {
 
   constructor(props){
     super()
     this.state = {
-      ShowVideo: true
+      video: false
     }
   }
 
-  toggleVideo (e) {
-    e.preventDefault()
+  toggleVideo () {
+    //e.preventDefault()
     this.setState({
-      ShowVideo: false
+      video: true
     })
-    console.log("fired",this)
+    console.log("fired",this.state,this.state.video)
   }
 
   convertVideo(url){
@@ -40,58 +38,42 @@ export default class MosneVideo extends React.Component {
     return final
   }
 
+  render(){
+
     const iframevideo = (
-      <>
-        <h1>iframe {url}</h1>
-      </>
-    )
-
-    const postervideo = (
-      <>
-        {img && <a href="#" onClick={ (e) => { e.preventDefault; toggleVideo();}} className="post__video--link">
-          <Img
-            style={{maxWidth:size}}
-            fluid={img}
-            alt={image.title}
-            className="featured-image" />
-            </a>
-            }
-      </>
-    )
-    return (
-
-      <div className='post__video'> video module
-        {state.showVideo ? iframevideo : postervideo}
+      <div>
+        <div className="video-wrapper">
+          <iframe
+          src={this.convertVideo(this.props.url)}
+          title={this.props.image.title}
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          frameBorder="0"
+          webkitallowfullscreen="true"
+          mozallowfullscreen="true"
+          allowFullScreen
+          />
+        </div>
       </div>
     )
 
-/*
-  OldVideohtml = (
-      <> hello video
-                  {img && <a href="#" onClick="switchVideo(this,e,{layout.video_url});" className="post__video--link">
-                          <Img
-                            style={{maxWidth:size}}
-                            fluid={img}
-                            alt={image.title}
-                            className="featured-image" />
-                           </a>
-                           }
-                      <div className="video-wrapper">
-                        <iframe
-                        src={convertVideo(url)}
-                        title={url}
-                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                        frameBorder="0"
-                        webkitallowfullscreen="true"
-                        mozallowfullscreen="true"
-                        allowFullScreen
-                      />
-                      </div>
-                  <div dangerouslySetInnerHTML={{ __html: url }} />
-                  <div dangerouslySetInnerHTML={{ __html: convertVideo(url) }} />
-                end of video</>
+    const postervideo = (
+      <div>
+        {this.props.img && <a onClick={() => this.toggleVideo()} className="post__video--link">
+          <Img
+            style={{maxWidth:this.props.size}}
+            fluid={this.props.img}
+            alt={this.props.image.title}
+            className="featured-image" />
+            </a>
+            }
+      </div>
     )
-*/
+
+    return (
+      <div className='post__video'>
+        {this.state.video ? iframevideo : postervideo}
+      </div>
+    )
+  }
 }
 
-export default MosneVideo
