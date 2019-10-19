@@ -17,7 +17,16 @@ module.exports = async ({ actions, graphql }) => {
           postPrefix
         }
       }
-      allWordpressPost {
+      allWordpressPost(
+        sort: {
+          fields: date,
+          order: DESC
+        }
+        filter: {
+          fields: {
+            deploy: {eq: true}
+          }
+        }) {
         edges {
           node {
             id
@@ -30,6 +39,14 @@ module.exports = async ({ actions, graphql }) => {
               deploy
             }
           }
+          next {
+            slug
+            title
+          }
+          previous {
+            slug
+            title
+          }
         }
       }
     }
@@ -40,7 +57,7 @@ module.exports = async ({ actions, graphql }) => {
     }
 
     const { postPrefix } = result.data.site.siteMetadata;
-    const { edges } = result.data.allWordpressPost;
+    const  { edges } = result.data.allWordpressPost;
 
     edges.forEach( edge => {
       if (edge.node.fields.deploy) {
@@ -49,6 +66,8 @@ module.exports = async ({ actions, graphql }) => {
           component: postTemplate,
           context: {
             id: edge.node.id,
+            prev: edge.previous,
+            next: edge.next,
           }
         })
       }

@@ -8,11 +8,14 @@ import FlexibleAcf from "../components/FlexibleAcf"
 
 const PostTemplate = (props) => {
 
+  // console.table(props)
   const post = props.data.wordpressPost;
   const siteTitle = props.data.site.siteMetadata.title;
   const meta = props.data.site.siteMetadata;
+  const context = props.pageContext;
+  const postPrefix = props.data.site.siteMetadata.postPrefix;
   let featuredImage = false;
- 
+
   if (post.featured_media && post.featured_media.source_url ) {
     featuredImage = post.featured_media.localFile.childImageSharp.fluid;
   }
@@ -43,9 +46,30 @@ const PostTemplate = (props) => {
 
         <div className="post__content" dangerouslySetInnerHTML={{ __html: post.content }} />
 
-        <div
-          className="post__meta"
-        >
+        <div className="post__meta">
+
+          { context.prev && <AniLink
+            paintDrip
+            hex="#FFF700"
+            direction="bottom"
+            className="navlink navlink--prevt"
+            to={`${postPrefix}/${context.prev.slug}`}
+          >
+            prev: {context.prev.title}
+            </AniLink>
+          }
+
+          { context.next && <AniLink
+            paintDrip
+            hex="#FFF700"
+            direction="bottom"
+            className="navlink navlink--next"
+            to={`${postPrefix}/${context.next.slug}`}
+          >
+            next: {context.next.title}
+            </AniLink>
+          }
+
           <div className="post-date">{post.date}</div>
           <AniLink
             paintDrip
@@ -70,6 +94,7 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        postPrefix
         author
         imagefull
         imagehalf

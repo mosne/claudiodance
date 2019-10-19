@@ -51,6 +51,10 @@ export const pageQuery = graphql`
       }
     }
     allWordpressPost(
+       sort: {
+         fields: date,
+         order: DESC
+       }
        filter: {
          fields: {
            deploy: {eq: true}
