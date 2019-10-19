@@ -15,7 +15,7 @@ export default class MosneVideo extends React.Component {
     this.setState({
       video: true
     })
-    console.log("fired",this.state,this.state.video)
+    // console.log("fired",this.state,this.state.video)
   }
 
   convertVideo(url){
@@ -70,7 +70,7 @@ export default class MosneVideo extends React.Component {
     )
 
     return (
-      <div className='post__video'>
+      <div className='post__video' key={this.props.key}>
         {this.state.video ? iframevideo : postervideo}
       </div>
     )

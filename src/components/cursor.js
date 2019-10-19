@@ -18,7 +18,7 @@ const Mosnecursor = () => {
     const mcurr = window.document.getElementsByClassName(`custom-cursor`)
 
     if (mcurr.length === 2){
-      console.log('total cursor',mcurr.length)
+      // console.log('total cursor',mcurr.length)
     }else{
       initMosnecursor()
     }
