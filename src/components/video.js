@@ -15,7 +15,7 @@ export default class MosneVideo extends React.Component {
     this.setState({
       video: true
     })
-    console.log("fired",this.state,this.state.video)
+    // console.log("fired",this.state,this.state.video)
   }
 
   convertVideo(url){

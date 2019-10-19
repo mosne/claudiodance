@@ -7,7 +7,7 @@ import MosneVideo from '../components/video'
 
 
 const FlexibleAcf = (props) => {
-  const { post, meta } = props
+  const { post, meta, index } = props
   let slideAcf = true;
   const imgSizes = {
     full : 1840,
@@ -15,9 +15,7 @@ const FlexibleAcf = (props) => {
   }
 
   slideAcf = (
-    <div className='post__text'>
-      {post.title}
-      <div className="post__loop">
+    <div className="post__loop">
       {post.acf &&
           post.acf.slides_post &&
           post.acf.slides_post.map((layout, i) => {
@@ -26,12 +24,12 @@ const FlexibleAcf = (props) => {
                 /**
                  * Gallery
                  **/
-                <div className='post__gallery'>
-                  {layout.images && layout.images.map((photo) => {
+                <div className='post__gallery' key={`acf-${post.id}-${i}`}>
+                  {layout.images && layout.images.map((photo,j) => {
 
                     const img = photo.localFile.childImageSharp.fluid
                     return (
-                      <div className="post__image">
+                      <div className="post__image" key={`acf-${post.id}-img-${j}`}>
                       {img && <Img
                             style={{maxWidth:imgSizes.full}}
                             fluid={img}
@@ -43,17 +41,16 @@ const FlexibleAcf = (props) => {
                 </div>
               )
             }else if (layout.__typename === `WordPressAcf_double`) {
-              console.log('doube_1', layout.image)
+              // console.log('doube_1', layout.image)
               const img = layout.image.localFile.childImageSharp.fluid
-              console.log('doube_2', layout.image_2)
+              // console.log('doube_2', layout.image_2)
               const img2 = layout.image_2.localFile.childImageSharp.fluid
               return (
                 /**
                  * Double
                  **/
-                <div className='post__double'>
+                <div className='post__double' key={`acf-${post.id}-${i}`}>
 
-                  {console.log('size', imgSizes.half)}
                   {img && <Img
                             style={{maxWidth:imgSizes.half}}
                             fluid={img}
@@ -72,7 +69,7 @@ const FlexibleAcf = (props) => {
                 /**
                  * Text
                  **/
-                <div className='post__text'>
+                <div className='post__text' key={`acf-${post.id}-${i}`}>
                   <div dangerouslySetInnerHTML={{ __html: txt }} />
                 </div>
               )
@@ -87,16 +84,16 @@ const FlexibleAcf = (props) => {
                   url={layout.video_url}
                   size={imgSizes.full}
                   image={layout.image}
+                  key={`acf-${post.id}-${i}`}
                   ></MosneVideo>
               )
             }
             //return null
           })}
       </div>
-    </div>
   )
   return (
-    <div className="post__sildes">
+    <div className="post__sildes" key="acf">
       {slideAcf}
     </div>
   )
