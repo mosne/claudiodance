@@ -13,7 +13,7 @@ export default class MosneVideo extends React.Component {
   toggleVideo () {
     //e.preventDefault()
     this.setState({
-      video: true
+      video: !this.state.video
     })
     // console.log("fired",this.state,this.state.video)
   }
@@ -25,7 +25,7 @@ export default class MosneVideo extends React.Component {
     const pattern1 = /(?:http?s?:\/\/)?(?:www\.)?(?:vimeo\.com)\/?(.+)/g
     const pattern2 = /(?:http?s?:\/\/)?(?:www\.)?(?:youtube\.com|youtu\.be)\/(?:watch\?v=)?(.+)/g
     const replacement1 = '//player.vimeo.com/video/$1' + '?background=1'
-    const replacement2 = 'https://www.youtube.com/embed/$1' + '?rel=0&autoplay=1&mute=1'
+    const replacement2 = 'https://www.youtube.com/embed/$1' + '?rel=0&autoplay=1&mute=1&controls=0'
     if(pattern1.test(input)){
       // console.log(input, replacement1, pattern1)
       final = input.replace(pattern1, replacement1)
@@ -41,7 +41,7 @@ export default class MosneVideo extends React.Component {
   render(){
 
     const iframevideo = (
-      <div>
+      <div onClick={() => this.toggleVideo()}>
         <div className="video-wrapper">
           <iframe
           src={this.convertVideo(this.props.url)}

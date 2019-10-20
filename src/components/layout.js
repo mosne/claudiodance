@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import AniLink from 'gatsby-plugin-transition-link/AniLink'
 import Mosnecursor from './cursor';
+import Footer from "../components/footer"
 
 
 const Layout = (props) => {
@@ -46,10 +47,8 @@ const Layout = (props) => {
     <div className="main">
       <header className="header">{header}</header>
       <main className="main__content">{children}</main>
-      <footer>
-        footer
-      </footer>
-      <Mosnecursor key="mosne-cursor-unique"></Mosnecursor>
+      <Footer/>
+      <Mosnecursor key="mosne-cursor-unique"/>
     </div>
   )
 }

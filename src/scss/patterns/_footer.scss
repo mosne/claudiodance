@@ -5,8 +5,17 @@
 .footer {
 	$el: &;
 
+	border-top: 1px solid $maincolor;
+
 	position: relative;
 	z-index: z('footer');
 	padding-bottom: $base-spacing;
-	text-align: center;
+	text-align: left;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-gap: 50px;
+	@include breakpoints(md){
+		grid-template-columns: 1fr 1fr;
+	}
+
 }

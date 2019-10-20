@@ -13,6 +13,7 @@
 
 	&__video{
 		margin-bottom: $spacer;
+		
 		&--wrapper{
 			position: relative;
 			width: 100%;
@@ -44,6 +45,7 @@
 			}
 		}
 		.video-wrapper{
+			position: relative;
 			z-index: -1;
 		}
 	}

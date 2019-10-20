@@ -31,7 +31,17 @@ const PostTemplate = (props) => {
         title={post.title}
         description={post.excerpt}
       />
-        <h1>{post.title} </h1>
+
+        {featuredImage &&
+                      <Img
+                      style={{maxWidth:1840}}
+                      fluid={featuredImage}
+                      title={post.title}
+                      alt={featuredImage.title}
+                      className="single__featured-image" />
+
+        }
+        <h1 className="post__title">{post.title} </h1>
 
         <FlexibleAcf
               post={post}
@@ -41,27 +51,30 @@ const PostTemplate = (props) => {
         <div className="post__content" dangerouslySetInnerHTML={{ __html: post.content }} />
 
         <div className="post__meta">
-          { context.prev && <AniLink
-            paintDrip
-            hex="#FFF700"
-            direction="bottom"
-            className="fx__cursor navlink navlink--prevt"
-            to={`${postPrefix}/${context.prev.slug}`}
-          >
-            ←PREVIOUS
-            </AniLink>
-          }
-
-          { context.next && <AniLink
-            paintDrip
-            hex="#FFF700"
-            direction="bottom"
-            className="fx__cursor navlink navlink--next"
-            to={`${postPrefix}/${context.next.slug}`}
-          >
-            NEXT→
-            </AniLink>
-          }
+          <div className="post__meta-item">
+            { context.prev && <AniLink
+              paintDrip
+              hex="#FFF700"
+              direction="bottom"
+              className="fx__cursor navlink navlink--prevt"
+              to={`${postPrefix}/${context.prev.slug}`}
+            >
+              ←PREVIOUS
+              </AniLink>
+            }
+          </div>
+          <div className="post__meta-item">
+            { context.next && <AniLink
+              paintDrip
+              hex="#FFF700"
+              direction="bottom"
+              className="fx__cursor navlink navlink--next"
+              to={`${postPrefix}/${context.next.slug}`}
+            >
+              NEXT→
+              </AniLink>
+            }
+          </div>
         </div>
 
     </Layout>
