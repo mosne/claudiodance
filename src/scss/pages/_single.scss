@@ -13,6 +13,39 @@
 
 	&__video{
 		margin-bottom: $spacer;
+		&--wrapper{
+			position: relative;
+			width: 100%;
+			&::before{
+				content: "";
+				float: left;
+				padding: 10vh;
+				height: 10vh;
+				background: $maincolor;
+				border-radius: 50%;
+				position: absolute;
+				z-index: 10;
+				left:50%;
+				top: 50%;
+				transform: translate(-50%,-50%);
+				pointer-events: none;
+			}
+			&::after{
+				content: "play";
+				font-size: 4vh;
+				color: black;
+				text-transform: uppercase;
+				position: absolute;
+				z-index: 11;
+				left:50%;
+				top: 50%;
+				transform: translate(-50%,-50%);
+				pointer-events: none;
+			}
+		}
+		.video-wrapper{
+			z-index: -1;
+		}
 	}
 	&__text{
 		margin-bottom: $spacer;
@@ -23,6 +56,21 @@
 		grid-template-columns: 1fr 1fr;
 		grid-gap: $gap;
 		margin-bottom: $spacer;
+	}
+	&__meta{
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.navlink{
+		&--next{
+			align-self: flex-end;
+		}
+	}
+	&__content{
+		padding-top:20px;
+		border-top: 1px solid $maincolor;
+		border-bottom: 1px solid $maincolor;
 	}
 
 }

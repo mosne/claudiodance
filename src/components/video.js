@@ -57,7 +57,7 @@ export default class MosneVideo extends React.Component {
     )
 
     const postervideo = (
-      <div>
+      <div className="post__video--wrapper">
         {this.props.img && <a onClick={() => this.toggleVideo()} className="post__video--link">
           <Img
             style={{maxWidth:this.props.size}}

@@ -32,13 +32,7 @@ const PostTemplate = (props) => {
         description={post.excerpt}
       />
         <h1>{post.title} </h1>
-        {featuredImage &&
-              <Img
-              style={{maxWidth:meta.imagefull}}
-              fluid={featuredImage}
-              title={post.title}
-              className="featured-image" />
-        }
+
         <FlexibleAcf
               post={post}
               meta={meta}
@@ -47,15 +41,14 @@ const PostTemplate = (props) => {
         <div className="post__content" dangerouslySetInnerHTML={{ __html: post.content }} />
 
         <div className="post__meta">
-
           { context.prev && <AniLink
             paintDrip
             hex="#FFF700"
             direction="bottom"
-            className="navlink navlink--prevt"
+            className="fx__cursor navlink navlink--prevt"
             to={`${postPrefix}/${context.prev.slug}`}
           >
-            prev: {context.prev.title}
+            ←PREVIOUS
             </AniLink>
           }
 
@@ -63,23 +56,12 @@ const PostTemplate = (props) => {
             paintDrip
             hex="#FFF700"
             direction="bottom"
-            className="navlink navlink--next"
+            className="fx__cursor navlink navlink--next"
             to={`${postPrefix}/${context.next.slug}`}
           >
-            next: {context.next.title}
+            NEXT→
             </AniLink>
           }
-
-          <div className="post-date">{post.date}</div>
-          <AniLink
-            paintDrip
-            hex="#FFF700"
-            direction="bottom"
-            className="cat-link"
-            to={`/category/${post.categories[0].slug}`}
-          >
-            {post.categories[0].name}{' '}
-          </AniLink>
         </div>
 
     </Layout>

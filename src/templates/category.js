@@ -27,6 +27,7 @@ const CategoryTemplate = (props) => {
                 <AniLink
                   paintDrip
                   hex="#FFF700"
+                  className="fx__cursor"
                   direction="bottom"
                   style={{ boxShadow: `none` }}
                   to={`${postPrefix}/${node.slug}`}

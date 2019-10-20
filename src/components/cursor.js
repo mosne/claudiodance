@@ -38,7 +38,7 @@ const Mosnecursor = () => {
       })
     })
 
-    const alinks = window.document.querySelectorAll("a")
+    const alinks = window.document.querySelectorAll(".fx__cursor")
     alinks.forEach(element => {
 
         element.addEventListener(`mouseenter`, () => {

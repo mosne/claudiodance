@@ -27,6 +27,7 @@ const BlogIndex = (props) => {
                 paintDrip
                 hex="#FFF700"
                 direction="bottom"
+                className="fx__cursor"
                 to={`${postPrefix}/${node.slug}`}
                 dangerouslySetInnerHTML={{
                   __html: '<span>' + spannedTitle + '</span>',

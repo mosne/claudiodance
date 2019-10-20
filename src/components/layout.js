@@ -14,6 +14,7 @@ const Layout = (props) => {
       <>
         <h1 className="header__logo">
           <AniLink 
+            className="fx__cursor"
             paintDrip
             hex="#FFF700"
             direction="bottom"
@@ -31,6 +32,7 @@ const Layout = (props) => {
           <AniLink
             paintDrip
             hex="#FFF700"
+            className="fx__cursor"
             direction="bottom"
             to={`/`}
           >
@@ -47,7 +49,7 @@ const Layout = (props) => {
       <footer>
         footer
       </footer>
-      <Mosnecursor></Mosnecursor>
+      <Mosnecursor key="mosne-cursor-unique"></Mosnecursor>
     </div>
   )
 }
