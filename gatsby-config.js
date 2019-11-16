@@ -54,7 +54,7 @@ module.exports = {
           "/wp/v2/media",
           // "/wp/v2/tags",
           // "/wp/v2/taxonomies",
-          // "/menus/v1/menus/",
+          "/wp-api-menus/v2/menus",
           "/acf/v3/options/",
         ],
         normalizer({ entities }) {

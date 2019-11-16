@@ -14,13 +14,14 @@ const CategoryTemplate = (props) => {
   const posts = props.data.allWordpressPost.edges;
 
   return (
+    // eslint-disable-next-line react/jsx-filename-extension
     <Layout location={props.location} title={title}>
       <SEO
         title={`Archive | ${props.pageContext.name}`}
         description={`Archive for ${props.pageContext.name} category`}
       />
       <h1>Archive | {props.pageContext.name}</h1>
-        {posts.map(({ node }) => {
+      {posts.map(({ node }) => {
           return (
             <div key={node.slug}>
               <h3>

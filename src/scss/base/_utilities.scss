@@ -15,7 +15,7 @@
 // scrollbars
 
 ::-webkit-scrollbar {
-    width: 12px;
+    width: 1px;
 }
 
 ::-webkit-scrollbar-track {
@@ -25,5 +25,5 @@
 
 ::-webkit-scrollbar-thumb {
     border-radius: 0;
-    background: $maincolor;
+    background: $darkcolor;
 }

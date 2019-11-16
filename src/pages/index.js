@@ -1,9 +1,8 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+// eslint-disable-next-line import/first
 import AniLink from "gatsby-plugin-transition-link/AniLink"
 
 const BlogIndex = (props) => {
@@ -18,7 +17,7 @@ const BlogIndex = (props) => {
     <Layout location={props.location} title={title}>
       <SEO title="All posts" />
       {posts.map(({ node }) => (
-          <div key={node.slug}>
+        <div key={node.slug}>
             <h2>
               <AniLink
                 paintDrip
@@ -31,7 +30,7 @@ const BlogIndex = (props) => {
                 }}
               />
             </h2>
-          </div>
+        </div>
         ))}
     </Layout>
   )
