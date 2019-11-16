@@ -18,7 +18,7 @@ function Footer() {
       render={data => {
         // eslint-disable-next-line camelcase
         const { footer_1, footer_2, footer_3 } = data.wordpressAcfOptions.options
-        const footerMenu = data.allWordpressWpApiMenusMenusItems.edges[1].node.items
+        const footerMenu = data.allWordpressWpApiMenusMenusItems.edges[0].node.items
 
         return (
           <footer className="footer">
@@ -54,7 +54,7 @@ function Footer() {
 
 const footerQuery = graphql`
   query footerQuery {
-    allWordpressWpApiMenusMenusItems{
+    allWordpressWpApiMenusMenusItems(filter: {slug: {eq: "legal"}}){
       edges{
           node{
               id

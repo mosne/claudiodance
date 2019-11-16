@@ -18,6 +18,8 @@ function MainMenu() {
       render={data => {
         const menuItems = data.allWordpressWpApiMenusMenusItems.edges[0].node.items
 
+        console.log(data.allWordpressWpApiMenusMenusItems)
+
         return (
           <nav>
             <ul className="menu">
@@ -45,7 +47,7 @@ function MainMenu() {
 
 const headerQuery = graphql`
   query headerQuery {
-    allWordpressWpApiMenusMenusItems{
+    allWordpressWpApiMenusMenusItems(filter: {slug: {eq: "main"}}){
       edges{
           node{
               id
