@@ -24,57 +24,59 @@ const PostTemplate = (props) => {
     slidePost = post.slides_post
   }
   return (
+    // eslint-disable-next-line react/jsx-filename-extension
     <Layout location={props.location} title={siteTitle}>
-       <SEO
+      <SEO
         title={post.title}
         description={post.excerpt}
       />
 
-        {featuredImage &&
-                      <Img
-                      style={{maxWidth:1840}}
-                      fluid={featuredImage}
-                      title={post.title}
-                      alt={featuredImage.title}
-                      className="single__featured-image" />
+      {featuredImage &&
+      <Img
+        style={{maxWidth:1840}}
+        fluid={featuredImage}
+        title={post.title}
+        alt={featuredImage.title}
+        className="single__featured-image" 
+      />
 
         }
-        <h1 className="post__title">{post.title} </h1>
-        <div className="post__content" dangerouslySetInnerHTML={{ __html: post.content }} />
+      <h1 className="post__title">{post.title} </h1>
+      <div className="post__content" dangerouslySetInnerHTML={{ __html: post.content }} />
 
-        <FlexibleAcf
-              post={post}
-              meta={meta}
-        />
+      <FlexibleAcf
+        post={post}
+        meta={meta}
+      />
 
-        {post.acf.credits && <div className="post__credits" dangerouslySetInnerHTML={{ __html: post.acf.credits }} />}
+      {post.acf.credits && <div className="post__credits" dangerouslySetInnerHTML={{ __html: post.acf.credits }} />}
 
-        <div className="post__meta">
-          <div className="post__meta-item">
-            { context.prev && <AniLink
-              paintDrip
-              hex="#FFF700"
-              direction="bottom"
-              className="fx__cursor navlink navlink--prevt"
-              to={`${postPrefix}/${context.prev.slug}`}
-            >
-              ←PREVIOUS
-              </AniLink>
-            }
-          </div>
-          <div className="post__meta-item">
-            { context.next && <AniLink
-              paintDrip
-              hex="#FFF700"
-              direction="bottom"
-              className="fx__cursor navlink navlink--next"
-              to={`${postPrefix}/${context.next.slug}`}
-            >
-              NEXT→
-              </AniLink>
-            }
-          </div>
+      <div className="post__meta">
+        <div className="post__meta-item">
+          { context.prev && <AniLink
+            paintDrip
+            hex="#FFF700"
+            direction="bottom"
+            className="fx__cursor navlink navlink--prevt"
+            to={`${postPrefix}/${context.prev.slug}`}
+          >
+            ←PREVIOUS
+            </AniLink>
+          }
         </div>
+        <div className="post__meta-item">
+          { context.next && <AniLink
+            paintDrip
+            hex="#FFF700"
+            direction="bottom"
+            className="fx__cursor navlink navlink--next"
+            to={`${postPrefix}/${context.next.slug}`}
+          >
+            NEXT→
+            </AniLink>
+          }
+        </div>
+      </div>
 
     </Layout>
   )
