@@ -1,10 +1,8 @@
 import React from "react"
 import { graphql } from "gatsby"
 
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import AniLink from "gatsby-plugin-transition-link/AniLink"
 
 const PageTemplate = (props) => {
 
@@ -12,13 +10,14 @@ const PageTemplate = (props) => {
   const siteTitle = props.data.site.siteMetadata.title;
 
   return (
+    // eslint-disable-next-line react/jsx-filename-extension
     <Layout location={props.location} title={siteTitle}>
       <SEO
         title={post.title}
         description={post.excerpt}
       />
-        <h1>{post.title} </h1>
-        <div dangerouslySetInnerHTML={{ __html: post.content }} />
+      <h1>{post.title} </h1>
+      <div dangerouslySetInnerHTML={{ __html: post.content }} />
     </Layout>
   )
 }

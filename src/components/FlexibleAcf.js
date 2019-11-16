@@ -1,6 +1,6 @@
 /**
  * FlexibleAcf
- **/
+ * */
 import React from 'react';
 import Img from 'gatsby-image'
 import MosneVideo from '../components/video'
@@ -15,6 +15,7 @@ const FlexibleAcf = (props) => {
   }
 
   slideAcf = (
+    // eslint-disable-next-line react/jsx-filename-extension
     <div className="post__loop">
       {post.acf &&
           post.acf.slides_post &&
@@ -23,23 +24,26 @@ const FlexibleAcf = (props) => {
               return (
                 /**
                  * Gallery
-                 **/
+                 * */
                 <div className='post__gallery' key={`acf-${post.id}-${i}`}>
                   {layout.images && layout.images.map((photo,j) => {
 
                     const img = photo.localFile.childImageSharp.fluid
                     return (
+                      // eslint-disable-next-line react/no-array-index-key
                       <div className="post__image" key={`acf-${post.id}-img-${j}`}>
-                      {img && <Img
-                            style={{maxWidth:imgSizes.full}}
-                            fluid={img}
-                            alt={photo.title}
-                            className="featured-image" />}
+                        {img && <Img
+                          style={{maxWidth:imgSizes.full}}
+                          fluid={img}
+                          alt={photo.title}
+                          className="featured-image"
+                        />}
                       </div>
                     )
                   })}
                 </div>
               )
+            // eslint-disable-next-line no-underscore-dangle
             }else if (layout.__typename === `WordPressAcf_double`) {
               // console.log('doube_1', layout.image)
               const img = layout.image.localFile.childImageSharp.fluid
@@ -48,19 +52,20 @@ const FlexibleAcf = (props) => {
               return (
                 /**
                  * Double
-                 **/
+                 * */
+                // eslint-disable-next-line react/no-array-index-key
                 <div className='post__double' key={`acf-${post.id}-${i}`}>
 
                   {img && <Img
-                            style={{maxWidth:imgSizes.half}}
-                            fluid={img}
-                            alt={layout.image.title}
-                            className="featured-image" />}
+                    style={{maxWidth:imgSizes.half}}
+                    fluid={img}
+                    alt={layout.image.title}
+                    className="featured-image" />}
                   {img2 && <Img
-                            style={{maxWidth:imgSizes.half}}
-                            fluid={img2}
-                            alt={layout.image_2.title}
-                            className="featured-image" />}
+                    style={{maxWidth:imgSizes.half}}
+                    fluid={img2}
+                    alt={layout.image_2.title}
+                    className="featured-image" />}
                 </div>
               )
             }else if(layout.__typename === `WordPressAcf_text`) {
@@ -68,7 +73,7 @@ const FlexibleAcf = (props) => {
               return (
                 /**
                  * Text
-                 **/
+                 * */
                 <div className='post__text' key={`acf-${post.id}-${i}`}>
                   <div dangerouslySetInnerHTML={{ __html: txt }} />
                 </div>
@@ -78,17 +83,17 @@ const FlexibleAcf = (props) => {
               return (
                 /**
                  * Video
-                 **/
+                 * */
                 <MosneVideo
                   img={img}
                   url={layout.video_url}
                   size={imgSizes.full}
                   image={layout.image}
                   key={`acf-${post.id}-${i}`}
-                  ></MosneVideo>
+                />
               )
             }
-            //return null
+
           })}
       </div>
   )

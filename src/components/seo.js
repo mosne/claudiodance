@@ -28,6 +28,7 @@ function SEO({ description, lang, meta, title }) {
   const metaDescription = description || site.siteMetadata.description
 
   return (
+    // eslint-disable-next-line react/jsx-filename-extension
     <Helmet
       htmlAttributes={{
         lang,

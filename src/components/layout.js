@@ -1,15 +1,13 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import AniLink from 'gatsby-plugin-transition-link/AniLink'
-// import Mosnecursor from './cursor';
+import MainMenu from '../components/MainMenu'
 import Footer from "../components/footer"
 
-
 const Layout = (props) => {
-  const { location, title, children } = props
+  const { location, title, children, menus } = props
   const rootPath = `${__PATH_PREFIX__}/`
   let header
-
 
 // cursors effects 
 
@@ -36,8 +34,9 @@ const Layout = (props) => {
 
   if (location.pathname === rootPath) {
     header = (
+      // eslint-disable-next-line react/jsx-filename-extension
       <>
-        <h1 className="header__logo">
+        <h1 className="header__logo visuallyhidden">
           <AniLink 
             className="fx__cursor"
             paintDrip
@@ -53,7 +52,7 @@ const Layout = (props) => {
   } else {
     header = (
       <>
-        <div className="header__logo">
+        <div className="header__logo visuallyhidden">
           <AniLink
             paintDrip
             hex="#FFF700"
@@ -61,7 +60,7 @@ const Layout = (props) => {
             direction="bottom"
             to={`/`}
           >
-          {title}
+            {title}
           </AniLink>
         </div>
       </>
@@ -69,9 +68,11 @@ const Layout = (props) => {
   }
   return (
     <div className="main">
-      <header className="header">{header}</header>
+      <header className="header">{header}
+        <MainMenu />
+      </header>
       <main className="main__content">{children}</main>
-      <Footer/>
+      <Footer />
     </div>
   )
 }

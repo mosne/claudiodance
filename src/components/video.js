@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 import React from 'react'
 import Img from 'gatsby-image'
 
@@ -11,13 +12,14 @@ export default class MosneVideo extends React.Component {
   }
 
   toggleVideo () {
-    //e.preventDefault()
+    // e.preventDefault()
     this.setState({
       video: !this.state.video
     })
     // console.log("fired",this.state,this.state.video)
   }
 
+  // eslint-disable-next-line class-methods-use-this
   convertVideo(url){
     const input = url
     let final
@@ -41,16 +43,17 @@ export default class MosneVideo extends React.Component {
   render(){
 
     const iframevideo = (
+      // eslint-disable-next-line react/jsx-filename-extension
       <div onClick={() => this.toggleVideo()}>
         <div className="video-wrapper">
           <iframe
-          src={this.convertVideo(this.props.url)}
-          title={this.props.image.title}
-          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          frameBorder="0"
-          webkitallowfullscreen="true"
-          mozallowfullscreen="true"
-          allowFullScreen
+            src={this.convertVideo(this.props.url)}
+            title={this.props.image.title}
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            frameBorder="0"
+            webkitallowfullscreen="true"
+            mozallowfullscreen="true"
+            allowFullScreen
           />
         </div>
       </div>
@@ -64,13 +67,13 @@ export default class MosneVideo extends React.Component {
             fluid={this.props.img}
             alt={this.props.image.title}
             className="featured-image" />
-            </a>
+        </a>
             }
       </div>
     )
 
     return (
-      <div className='post__video' key={this.props.key}>
+      <div className='post__video'>
         {this.state.video ? iframevideo : postervideo}
       </div>
     )
