@@ -52,9 +52,9 @@ module.exports = {
           "/wp/v2/posts",
           "/wp/v2/pages",
           "/wp/v2/media",
-          "/wp/v2/tags",
+          // "/wp/v2/tags",
           // "/wp/v2/taxonomies",
-          "/wp/v2/menu",
+          // "/menus/v1/menus/",
           "/acf/v3/options/",
         ],
         normalizer({ entities }) {
@@ -74,10 +74,10 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-transition-link`,
     {
-      resolve: `gatsby-plugin-typography`,
+      resolve: 'gatsby-plugin-web-font-loader',
       options: {
-        pathToConfigModule: `src/utils/typography`,
-      },
+        custom: { families: ['Favorit','Favorit_l'], urls: ['/webfonts/fonts.css']}
+      }
     },
     {
       resolve: "gatsby-plugin-sass",
@@ -98,22 +98,5 @@ module.exports = {
         purgeOnly: ['/style.scss'],
       },
     }, // must be after other CSS plugins
-    {
-      resolve: "gatsby-transformer-remark",
-      options: {
-        plugins: [
-        {
-          resolve: "gatsby-remark-embed-video",
-          options: {
-            width: 800,
-            ratio: 1.77, // Optional: Defaults to 16/9 = 1.77
-            height: 400, // Optional: Overrides optional.ratio
-            related: false, // Optional: Will remove related videos from the end of an embedded YouTube video.
-            noIframeBorder: true // Optional: Disable insertion of <style> border: 0
-          }
-        }
-        ]
-      }
-    },
   ],
 }

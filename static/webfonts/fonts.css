@@ -1,0 +1,17 @@
+@font-face {
+    font-family: "Favorit_n";
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    font-display: swap;
+    src: url(FavoritStd-Light.woff2) format("woff2"), url(FavoritStd-Light.woff) format("woff");
+}
+
+@font-face {
+    font-family: "Favorit_l";
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    font-display: swap;
+    src: url(FavoritLiningStd-Light.woff2) format("woff2"), url(FavoritLiningStd-Light.woff) format("woff");
+}

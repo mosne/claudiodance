@@ -42,26 +42,24 @@ body {
 	font-size: 1rem;
 	line-height: $base-lh;
 	font-family: $customfont-1;
+	font-weight: normal;
 	color: $textcolor;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	overflow-x: hidden;
-	//Fonts loading FOUT
-	//Adjust FOUT with tools like https://meowni.ca/font-style-matcher/
-	.fonts-loading & {
-		font-family: $font-sansserif;
-	}
 }
 
 a {
 	color: $textcolor;
 	text-decoration: none;
 	box-shadow: none;
-	ext-decoration: underline;
+	font-family: $customfont-2;
+	font-weight: normal;
 
 	@include hover {
 		color: $textcolor;
-		ext-decoration: underline;
+		font-family: $customfont-1;
+		font-weight: normal;
 	}
 }
 
@@ -72,10 +70,7 @@ a {
 		line-height: $heading-line-height;
 		font-family: $customfont-2;
 		font-size: 1.7em;
-		font-weight: 400;
-		.fonts-loading & {
-			font-family: $font-sansserif;
-		}
+		font-weight: normal;
 	}
 }
 

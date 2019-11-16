@@ -27,18 +27,18 @@
 @import "base/cssloading";
 
 //Wordpress
-@import "wp/wpforms";
-@import "wp/img";
-@import "wp/gallery";
-@import "wp/wysiwyg";
+/// @import "wp/wpforms";
+// @import "wp/img";
+// @import "wp/gallery";
+// @import "wp/wysiwyg";
 
 // Components
-@import "components/buttons";
-@import "components/menu-trigger";
-@import "components/menu-fastaccess";
-@import "components/card";
+// @import "components/buttons";
+// @import "components/menu-trigger";
+// @import "components/menu-fastaccess";
+// @import "components/card";
 @import "components/iframe";
-@import "components/messages";
+// @import "components/messages";
 @import "components/cursor";
 
 // Patterns
@@ -46,8 +46,7 @@
 @import "patterns/footer";
 @import "patterns/menu";
 @import "patterns/hero";
-@import "patterns/searchform";
-@import "patterns/key-figures";
+// @import "patterns/searchform";
 
 // Pages
 @import "pages/single";

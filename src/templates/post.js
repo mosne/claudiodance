@@ -23,8 +23,6 @@ const PostTemplate = (props) => {
   if (post.slides_post){
     slidePost = post.slides_post
   }
-
-
   return (
     <Layout location={props.location} title={siteTitle}>
        <SEO
@@ -42,13 +40,14 @@ const PostTemplate = (props) => {
 
         }
         <h1 className="post__title">{post.title} </h1>
+        <div className="post__content" dangerouslySetInnerHTML={{ __html: post.content }} />
 
         <FlexibleAcf
               post={post}
               meta={meta}
         />
 
-        <div className="post__content" dangerouslySetInnerHTML={{ __html: post.content }} />
+        {post.acf.credits && <div className="post__credits" dangerouslySetInnerHTML={{ __html: post.acf.credits }} />}
 
         <div className="post__meta">
           <div className="post__meta-item">
@@ -115,11 +114,12 @@ export const pageQuery = graphql`
         source_url
       }
       categories {
-        name
-        slug
+      name
+      slug
       }
       content
       acf {
+        credits
         slides_post {
           ... on WordPressAcf_video {
             id

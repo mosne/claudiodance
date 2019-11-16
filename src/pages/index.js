@@ -14,13 +14,10 @@ const BlogIndex = (props) => {
   const posts = props.data.allWordpressPost.edges
 
   return (
+    // eslint-disable-next-line react/jsx-filename-extension
     <Layout location={props.location} title={title}>
       <SEO title="All posts" />
-      {posts.map(({ node }) => {
-
-        let spannedTitle = node.title.split(" ").join('</span> <span>')
-
-        return (
+      {posts.map(({ node }) => (
           <div key={node.slug}>
             <h2>
               <AniLink
@@ -30,13 +27,12 @@ const BlogIndex = (props) => {
                 className="fx__cursor"
                 to={`${postPrefix}/${node.slug}`}
                 dangerouslySetInnerHTML={{
-                  __html: '<span>' + spannedTitle + '</span>',
+                  __html: node.title,
                 }}
               />
             </h2>
           </div>
-        )
-      })}
+        ))}
     </Layout>
   )
 }

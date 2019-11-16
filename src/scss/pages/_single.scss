@@ -69,8 +69,18 @@
 			align-self: flex-end;
 		}
 	}
+
+	&__title{
+		padding-top:$spacer;
+		font-size: 1em;
+	}
+
 	&__content{
-		padding-top:20px;
+		padding-bottom:$spacer;
+	}
+
+	&__credits{
+		padding-top:$spacer;
 		border-top: 1px solid $maincolor;
 		border-bottom: 1px solid $maincolor;
 	}
