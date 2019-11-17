@@ -18,7 +18,7 @@ function MainMenu() {
       render={data => {
         const menuItems = data.allWordpressWpApiMenusMenusItems.edges[0].node.items
 
-        console.log(data.allWordpressWpApiMenusMenusItems)
+        // console.log(data.allWordpressWpApiMenusMenusItems)
 
         return (
           <nav>
