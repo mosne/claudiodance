@@ -1,7 +1,7 @@
 .post{
 
-	$gap : 20px;
-	$spacer : 74px;
+	$gap : .25em;
+	$spacer : .7em;
 
 	&__image{
 		margin-bottom: $spacer;
@@ -51,6 +51,10 @@
 	}
 	&__text{
 		margin-bottom: $spacer;
+		text-transform: uppercase;
+		p:last-child{
+			margin-bottom: 0;
+		}
 	}
 
 	&__double{
@@ -62,7 +66,8 @@
 	&__meta{
 		display: flex;
 		justify-content: space-between;
-		padding: 1em 0;
+		padding-top: $spacer;
+		border-top: 1px solid $maincolor;
 	}
 
 	.navlink{
@@ -78,24 +83,20 @@
 
 	&__content{
 		padding-bottom:$spacer;
+		text-transform: uppercase;
+		p:last-child{
+			margin-bottom: 0;
+		}
 	}
 
 	&__credits{
 		padding-top:$spacer;
+		padding-bottom:$spacer;
 		border-top: 1px solid $maincolor;
-		border-bottom: 1px solid $maincolor;
-	}
-
-}
-
-.page{
-	background: $maincolor;
-	color: $darkcolor;
-	a{
-		color: $darkcolor;
-		&:hover,
-		&:focus{
-			color: $darkcolor;
+		text-transform: uppercase;
+		p:last-child{
+			margin-bottom: 0;
 		}
 	}
+
 }

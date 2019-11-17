@@ -4,18 +4,19 @@
 
 .footer {
 	$el: &;
-
 	border-top: 1px solid $maincolor;
-
-	position: relative;
-	z-index: z('footer');
-	padding-bottom: $base-spacing;
+	margin-top: 1em;
+	padding-top:.7em;
 	text-align: left;
 	display: grid;
 	grid-template-columns: 1fr;
-	grid-gap: 50px;
+	grid-gap: 0;
+
 	@include breakpoints(md){
 		grid-template-columns: 1fr 1fr;
+	}
+	p, nav{
+		margin-bottom: .7em;
 	}
 
 }

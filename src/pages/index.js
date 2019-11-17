@@ -14,22 +14,20 @@ const BlogIndex = (props) => {
 
   return (
     // eslint-disable-next-line react/jsx-filename-extension
-    <Layout location={props.location} title={title}>
+    <Layout location={props.location} title={title} aclass="home">
       <SEO title="All posts" />
       {posts.map(({ node }) => (
-        <div key={node.slug}>
-            <h2>
-              <AniLink
-                paintDrip
-                hex="#FFF700"
-                direction="bottom"
-                className="fx__cursor"
-                to={`${postPrefix}/${node.slug}`}
-                dangerouslySetInnerHTML={{
-                  __html: node.title,
-                }}
-              />
-            </h2>
+        <div key={node.slug} className="project__list">
+          <AniLink
+            paintDrip
+            hex="#FFF700"
+            direction="bottom"
+            className="fx__cursor"
+            to={`${postPrefix}/${node.slug}`}
+            dangerouslySetInnerHTML={{
+              __html: node.title,
+            }}
+          />
         </div>
         ))}
     </Layout>

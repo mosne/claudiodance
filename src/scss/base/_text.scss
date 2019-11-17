@@ -40,7 +40,7 @@ body{
 body {
 	font-size: $base-fz;
 	font-size: 1rem;
-	line-height: $base-lh;
+	line-height: 1.15em;
 	font-family: $customfont-1;
 	font-weight: normal;
 	color: $textcolor;
@@ -59,17 +59,6 @@ a {
 	@include hover {
 		color: $textcolor;
 		font-family: $customfont-1;
-		font-weight: normal;
-	}
-}
-
-/* Headings
-----------------------------------------------------------------------------------------------------*/
-@for $i from 1 through 6 {
-	h#{$i} {
-		line-height: $heading-line-height;
-		font-family: $customfont-2;
-		font-size: 1.7em;
 		font-weight: normal;
 	}
 }
@@ -113,7 +102,7 @@ hr {
 	clear: both;
 	border: 0;
 	height: 1px;
-	background: $maingrey;
+	background: $maincolor;
 	margin: $base-spacing 0;
 }
 blockquote {
@@ -239,15 +228,19 @@ sup {
 	top: -0.5em;
 }
 
-h2{
+/* Headings
+----------------------------------------------------------------------------------------------------*/
+h1,h2,h3,h4,h5,h6{
 	text-transform: uppercase;
+	line-height: 1.15em;
+	font-family: $customfont-2;
+	font-size: 1em;
+	font-weight: normal;
+	margin-bottom: 0;
 }
 
-h2 a {
-	span{
-	text-decoration: underline;
-	}
-	&:hover span{
-		text-decoration: none;
-	}
+.project__list{
+	font-size: 1.75em;
+	line-height: 1.15em;
+	text-transform: uppercase;
 }

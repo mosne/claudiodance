@@ -16,8 +16,8 @@ const PageTemplate = (props) => {
         title={post.title}
         description={post.excerpt}
       />
-      <h1>{post.title} </h1>
-      <div dangerouslySetInnerHTML={{ __html: post.content }} />
+      <h1 className="visuallyhidden">{post.title} </h1>
+      <div className="page__content" dangerouslySetInnerHTML={{ __html: post.content }} />
     </Layout>
   )
 }

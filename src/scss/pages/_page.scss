@@ -1,0 +1,37 @@
+.page{
+    background: $maincolor;
+	color: $darkcolor;
+
+    a{
+		color: $darkcolor;
+		&:hover,
+		&:focus{
+			color: $darkcolor;
+		}
+    }
+
+    &__content{
+        padding-top: .7em;
+        text-transform: uppercase;
+
+        p{
+            margin-bottom: .7em;
+        }
+        p:last-child{
+            margin-bottom: 0;
+        }
+
+        h2{
+            color: red;
+        }
+
+    }
+
+    .footer{
+        border-top: 1px solid $darkcolor;
+    }
+
+    hr{
+        background: $darkcolor;
+    }
+}
