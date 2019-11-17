@@ -5,7 +5,7 @@ import MainMenu from '../components/MainMenu'
 import Footer from "../components/footer"
 
 const Layout = (props) => {
-  const { location, title, children, menus } = props
+  const { location, title, children, aclass } = props
   const rootPath = `${__PATH_PREFIX__}/`
   let header
 
@@ -67,12 +67,14 @@ const Layout = (props) => {
     )
   }
   return (
-    <div className="main">
-      <header className="header">{header}
-        <MainMenu />
-      </header>
-      <main className="main__content">{children}</main>
-      <Footer />
+    <div className={aclass}>
+      <div className="main">
+        <header className="header">{header}
+          <MainMenu />
+        </header>
+        <main className="main__content">{children}</main>
+        <Footer />
+      </div>
     </div>
   )
 }

@@ -15,7 +15,7 @@ const CategoryTemplate = (props) => {
 
   return (
     // eslint-disable-next-line react/jsx-filename-extension
-    <Layout location={props.location} title={title}>
+    <Layout location={props.location} title={title} aclass="category">
       <SEO
         title={`Archive | ${props.pageContext.name}`}
         description={`Archive for ${props.pageContext.name} category`}

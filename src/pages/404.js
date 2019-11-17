@@ -8,6 +8,7 @@ const NotFoundPage = (props) => {
   const siteTitle = props.data.site.siteMetadata.title;
 
   return (
+    // eslint-disable-next-line react/jsx-filename-extension
     <Layout location={props.location} title={siteTitle}>
       <SEO title="404: Not Found" />
       <h1>Not Found</h1>

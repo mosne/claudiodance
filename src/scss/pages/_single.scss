@@ -87,3 +87,15 @@
 	}
 
 }
+
+.page{
+	background: $maincolor;
+	color: $darkcolor;
+	a{
+		color: $darkcolor;
+		&:hover,
+		&:focus{
+			color: $darkcolor;
+		}
+	}
+}

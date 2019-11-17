@@ -25,7 +25,7 @@ const PostTemplate = (props) => {
   }
   return (
     // eslint-disable-next-line react/jsx-filename-extension
-    <Layout location={props.location} title={siteTitle}>
+    <Layout location={props.location} title={siteTitle} aclass="post">
       <SEO
         title={post.title}
         description={post.excerpt}
