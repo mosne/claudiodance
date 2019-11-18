@@ -93,15 +93,5 @@ module.exports = {
         },
       },
     },
-    {
-      // Removes unused css rules
-      resolve:'gatsby-plugin-purgecss',
-      options: {
-        // Activates purging in gatsby develop
-        develop: true,
-        // Purge only the main css file
-        purgeOnly: ['/style.scss'],
-      },
-    }, // must be after other CSS plugins
   ],
 }
