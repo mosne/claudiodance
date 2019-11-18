@@ -3,6 +3,8 @@ import { Link } from 'gatsby'
 import AniLink from 'gatsby-plugin-transition-link/AniLink'
 import MainMenu from '../components/MainMenu'
 import Footer from "../components/footer"
+import CookieConsent from 'react-cookie-consent'
+
 
 const Layout = (props) => {
   const { location, title, children, aclass } = props
@@ -74,6 +76,18 @@ const Layout = (props) => {
         </header>
         <main className="main__content">{children}</main>
         <Footer />
+        <CookieConsent
+          enableDeclineButton
+          location="bottom"
+          buttonText="I understand"
+          declineButtonText="I decline"
+          cookieName="gatsby-gdpr-google-analytics"
+          style={{ background: "#000", color:"#FFF700", borderTop:"1px solid #FFF700",lineHeight:"1.15em",fontSize: "20px", textTransform:"uppercase"}}
+          buttonStyle={{ color: "#000",background:"#FFF700", fontSize: "20px",textTransform:"uppercase" }}
+          declineButtonStyle={{ color: "#FFF700",background:"#000", border:"1px solid #FFF700", fontSize: "20px", textTransform:"uppercase"}}
+          expires={120}
+        >This website collects web traffic statistics anonymously. If you continue to browse this website, you are allowing all third-party services {" "}
+      </CookieConsent>
       </div>
     </div>
   )

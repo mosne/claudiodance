@@ -65,14 +65,20 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: `gatsby-plugin-gdpr-cookies`,
       options: {
-        // trackingId: `ADD YOUR TRACKING ID HERE`,
-        head: false,
-        // Setting this parameter is optional
-        anonymize: true,
-        // Setting this parameter is also optional
-        respectDNT: true,
+        googleAnalytics: {
+          trackingId: 'UA-XXXX-XXXXX-XXX',
+          // Setting this parameter is optional
+          anonymize: true
+        },
+        /*
+        facebookPixel: {
+          pixelId: 'YOUR_FACEBOOK_PIXEL_ID'
+        },
+        */
+        // Defines the environments where the tracking should be available  - default is ["production"]
+        environments: ['production', 'development']
       },
     },
     `gatsby-plugin-offline`,
