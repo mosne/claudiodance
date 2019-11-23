@@ -108,7 +108,7 @@ export const pageQuery = graphql`
         localFile {
           childImageSharp {
             fluid(maxWidth: 1800, quality: 90){
-            ...GatsbyImageSharpFluid
+            ...GatsbyImageSharpFluid_withWebp
             }
           }
           relativePath
@@ -135,7 +135,7 @@ export const pageQuery = graphql`
               localFile {
                 childImageSharp {
                   fluid(maxWidth: 1800, quality: 90){
-                  ...GatsbyImageSharpFluid
+                  ...GatsbyImageSharpFluid_withWebp
                   }
                 }
                 relativePath
@@ -162,7 +162,7 @@ export const pageQuery = graphql`
               localFile {
                 childImageSharp {
                   fluid(maxWidth: 900, quality: 90){
-                  ...GatsbyImageSharpFluid
+                  ...GatsbyImageSharpFluid_withWebp
                   }
                 }
                 relativePath
@@ -176,7 +176,7 @@ export const pageQuery = graphql`
               localFile {
                 childImageSharp {
                   fluid(maxWidth: 900, quality: 90){
-                  ...GatsbyImageSharpFluid
+                  ...GatsbyImageSharpFluid_withWebp
                   }
                 }
                 relativePath
@@ -196,7 +196,7 @@ export const pageQuery = graphql`
               localFile {
                 childImageSharp {
                   fluid(maxWidth: 1800, quality: 90){
-                  ...GatsbyImageSharpFluid
+                  ...GatsbyImageSharpFluid_withWebp
                   }
                 }
                 relativePath

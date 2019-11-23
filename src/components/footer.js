@@ -25,7 +25,7 @@ function Footer() {
             <div className="footer__content" dangerouslySetInnerHTML={{ __html: footer_1 }} />
             <div className="footer__content" dangerouslySetInnerHTML={{ __html: footer_2 }} />
             {footerMenu.map((item) =>
-                (<div ClassName="footer__content" key={item.object_slug}>
+                (<div className="footer__content" key={item.object_slug}>
                   <p>
                     <AniLink
                       paintDrip
