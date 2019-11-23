@@ -15,7 +15,7 @@ const BlogIndex = (props) => {
   return (
     // eslint-disable-next-line react/jsx-filename-extension
     <Layout location={props.location} title={title} aclass="home">
-      <SEO title="All posts" />
+      <SEO title="Work" />
       {posts.map(({ node }) => (
         <div key={node.slug} className="project__list">
           <AniLink
