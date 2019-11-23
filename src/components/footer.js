@@ -24,26 +24,22 @@ function Footer() {
           <footer className="footer">
             <div className="footer__content" dangerouslySetInnerHTML={{ __html: footer_1 }} />
             <div className="footer__content" dangerouslySetInnerHTML={{ __html: footer_2 }} />
-            <div className="footer__content">
-              <nav>
-                <ul className="menu">
-                  {footerMenu.map((item) =>
-                    (<li key={item.object_slug}>
-                      <AniLink
-                        paintDrip
-                        hex="#FFF700"
-                        direction="bottom"
-                        className="fx__cursor"
-                        to={item.url}
-                        dangerouslySetInnerHTML={{
-                        __html: item.title,
+            {footerMenu.map((item) =>
+                (<div ClassName="footer__content" key={item.object_slug}>
+                  <p>
+                    <AniLink
+                      paintDrip
+                      hex="#FFF700"
+                      direction="bottom"
+                      className="fx__cursor"
+                      to={item.url}
+                      dangerouslySetInnerHTML={{
+                      __html: item.title,
                       }}
-                      />
-                    </li>)
-                        )}
-                </ul>
-              </nav>
-            </div>
+                    />
+                  </p>
+                </div>)
+                    )}
             <div className="footer__content" dangerouslySetInnerHTML={{ __html: footer_3 }} />
           </footer>
         )

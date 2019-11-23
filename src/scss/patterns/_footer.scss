@@ -11,11 +11,12 @@
 	display: grid;
 	grid-template-columns: 1fr;
 	grid-gap: 0;
+	text-transform: uppercase;
 
 	@include breakpoints(md){
 		grid-template-columns: 1fr 1fr;
 	}
-	p, nav{
+	p{
 		margin-bottom: .7em;
 	}
 
