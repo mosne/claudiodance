@@ -44,7 +44,7 @@ export default class MosneVideo extends React.Component {
 
     const iframevideo = (
       // eslint-disable-next-line react/jsx-filename-extension
-      <div onClick={() => this.toggleVideo()}>
+      <div>
         <div className="video-wrapper">
           <iframe
             src={this.convertVideo(this.props.url)}
@@ -66,7 +66,8 @@ export default class MosneVideo extends React.Component {
             style={{maxWidth:this.props.size}}
             fluid={this.props.img}
             alt={this.props.image.title}
-            className="featured-image" />
+            className="featured-image"
+          />
         </a>
             }
       </div>

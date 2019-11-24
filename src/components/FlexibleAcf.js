@@ -79,23 +79,38 @@ const FlexibleAcf = (props) => {
                 </div>
               )
             }else if (layout.__typename === `WordPressAcf_video`) {
-              const img = layout.image.localFile.childImageSharp.fluid
-              return (
-                /**
-                 * Video
-                 * */
-                <MosneVideo
-                  img={img}
-                  url={layout.video_url}
-                  size={imgSizes.full}
-                  image={layout.image}
-                  key={`acf-${post.id}-${i}`}
-                />
-              )
-            }
+              /**
+               * Video
+               * */
+                const img = layout.image.localFile.childImageSharp.fluid
+                const video_path = layout.video_file.localFile.publicURL
+                const video_name = layout.video_file.localFile.name
 
-          })}
-      </div>
+                if (video_path){
+                  return (
+                    <div className='post__video'>
+                      <div className="inlinevideo">
+                        <video disableremoteplayback="" autoplay="" playsinline="" muted="" poster="" loop="" preload="auto" className="video">
+                          <source src={layout.video_file.localFile.publicURL} type="video/mp4"/>
+                        </video>
+                      </div>
+                    </div>
+                  )
+                }else if (img){
+                  return (
+                    <MosneVideo
+                      img={img}
+                      url={layout.video_url}
+                      size={imgSizes.full}
+                      image={layout.image}
+                      key={`acf-${post.id}-${i}`}
+                    />
+                  )
+                }
+            }
+          })
+    }
+    </div>
   )
   return (
     <div className="post__sildes" key="acf">

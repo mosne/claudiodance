@@ -126,7 +126,13 @@ export const pageQuery = graphql`
           ... on WordPressAcf_video {
             id
             video_url
-            video_file
+            video_file{
+              id
+              localFile {
+                name
+                publicURL
+              }
+            }
             image {
               id
               title
