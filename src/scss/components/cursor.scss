@@ -1,3 +1,9 @@
+
+*{
+	cursor: none;
+}
+
+
 .custom-cursor {
 	position: fixed;
 	top: -18px;
@@ -11,7 +17,7 @@
 	-webkit-transform: matrix(1, 0, 0, 1, -100, -100);
 	transform: matrix(1, 0, 0, 1, -100, -100);
 	opacity: 0;
-	mix-blend-mode: exclusion;
+	
 	transition: opacity 0.4s ease, transform 0.15s cubic-bezier(0, 0.89, 0.49, 0.92),
 		opacity 0.4s ease;
 }
@@ -33,6 +39,10 @@
 
 }
 
+.custom-cursor.custom-cursor-active{
+	mix-blend-mode: exclusion;
+}
+
 .custom-cursor.custom-cursor-active .cursor {
 	transform: scale(1.5);
 	opacity: 1;
@@ -40,6 +50,7 @@
 	border: 3px solid $maincolor;
 }
 
+.custom-cursor.custom-cursor-too.custom-cursor-active,
 .custom-cursor-too {
 	mix-blend-mode: multiply;
 }
