@@ -83,7 +83,7 @@ const FlexibleAcf = (props) => {
               /**
                * Video
                * */
-                if (typeof(layout.video_file) !== "undefined" ){
+                if (layout.video_file !== null ){
                   return (
                     <div className='post__video'>
                       <div className="inlinevideo">
@@ -106,10 +106,10 @@ const FlexibleAcf = (props) => {
                       </div>
                     </div>
                   )
-                }else if (typeof(layout.image !== "undefined")) {
+                }else if (layout.image !== null) {
                   return (
                     <MosneVideo
-                      img={img}
+                      img={layout.image.localFile.childImageSharp.fluid}
                       url={layout.video_url}
                       size={imgSizes.full}
                       image={layout.image}
