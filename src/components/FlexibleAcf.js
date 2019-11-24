@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/media-has-caption */
 /**
  * FlexibleAcf
  * */
@@ -82,21 +83,30 @@ const FlexibleAcf = (props) => {
               /**
                * Video
                * */
-                const img = layout.image.localFile.childImageSharp.fluid
-                const video_path = layout.video_file.localFile.publicURL
-                const video_name = layout.video_file.localFile.name
-
-                if (video_path){
+                if (typeof(layout.video_file) !== "undefined" ){
                   return (
                     <div className='post__video'>
                       <div className="inlinevideo">
-                        <video disableremoteplayback="" autoplay="" playsinline="" muted="" poster="" loop="" preload="auto" className="video">
-                          <source src={layout.video_file.localFile.publicURL} type="video/mp4"/>
+                        // eslint-disable-next-line jsx-a11y/media-has-caption
+                        <video
+                          disableremoteplayback
+                          autoPlay
+                          playsinline
+                          muted
+                          poster
+                          loop
+                          preload="auto"
+                          className="video"
+                        >
+                          <source
+                            src={layout.video_file.localFile.publicURL} 
+                            type="video/mp4"
+                          />
                         </video>
                       </div>
                     </div>
                   )
-                }else if (img){
+                }else if (typeof(layout.image !== "undefined")) {
                   return (
                     <MosneVideo
                       img={img}
