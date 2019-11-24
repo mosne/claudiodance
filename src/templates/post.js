@@ -41,7 +41,7 @@ const PostTemplate = (props) => {
       />
 
         }
-      <h1 className="post__title">{post.title} </h1>
+      <h1 className="post__title" dangerouslySetInnerHTML={{ __html: post.title }} />
       <div className="post__content" dangerouslySetInnerHTML={{ __html: post.content }} />
 
       <FlexibleAcf

@@ -7,6 +7,7 @@
 
 import React from "react"
 import PropTypes from "prop-types"
+import he from "he"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
@@ -33,7 +34,7 @@ function SEO({ description, lang, meta, title }) {
       htmlAttributes={{
         lang,
       }}
-      title={title}
+      title={he.decode(title)}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
       meta={[
         {
