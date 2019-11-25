@@ -123,16 +123,28 @@ export const pageQuery = graphql`
       acf {
         credits
         slides_post {
-          ... on WordPressAcf_video {
+          ... on WordPressAcf_videofile {
             id
-            video_url
-            video_file{
-              id
+            image {
+              localFile {
+                childImageSharp {
+                  fluid(maxWidth: 1800, quality: 90){
+                  ...GatsbyImageSharpFluid_withWebp
+                  src
+                  }
+                }
+              }
+            }
+            video_mp4 {
               localFile {
                 name
                 publicURL
               }
             }
+          }
+          ... on WordPressAcf_video {
+            id
+            video_url
             image {
               id
               title

@@ -79,44 +79,44 @@ const FlexibleAcf = (props) => {
                   <div dangerouslySetInnerHTML={{ __html: txt }} />
                 </div>
               )
-            }else if (layout.__typename === `WordPressAcf_video`) {
+            }else if (layout.__typename === `WordPressAcf_videofile`) {
               /**
+               * Video MP4
+               * */
+              return (
+                <div className='post__video' key={`acf-${post.id}-${i}`}>
+                  <div className="inlinevideo">
+                    // eslint-disable-next-line jsx-a11y/media-has-caption
+                    <video
+                      autoPlay
+                      playsInline
+                      muted
+                      poster={layout.image.localFile.childImageSharp.fluid.src}
+                      loop
+                      preload="auto"
+                      className="video"
+                    >
+                      <source
+                        src={layout.video_mp4.localFile.publicURL} 
+                        type="video/mp4"
+                      />
+                    </video>
+                  </div>
+                </div>
+              )
+            }else if (layout.__typename === `WordPressAcf_video`) {
+               /**
                * Video
                * */
-                if (layout.video_file !== null ){
-                  return (
-                    <div className='post__video'>
-                      <div className="inlinevideo">
-                        // eslint-disable-next-line jsx-a11y/media-has-caption
-                        <video
-                          disableremoteplayback
-                          autoPlay
-                          playsinline
-                          muted
-                          poster
-                          loop
-                          preload="auto"
-                          className="video"
-                        >
-                          <source
-                            src={layout.video_file.localFile.publicURL} 
-                            type="video/mp4"
-                          />
-                        </video>
-                      </div>
-                    </div>
-                  )
-                }else if (layout.image !== null) {
-                  return (
-                    <MosneVideo
-                      img={layout.image.localFile.childImageSharp.fluid}
-                      url={layout.video_url}
-                      size={imgSizes.full}
-                      image={layout.image}
-                      key={`acf-${post.id}-${i}`}
-                    />
-                  )
-                }
+               return (
+                 <MosneVideo
+                   img={layout.image.localFile.childImageSharp.fluid}
+                   url={layout.video_url}
+                   size={imgSizes.full}
+                   image={layout.image}
+                   key={`acf-${post.id}-${i}`}
+                 />
+              )
             }
           })
     }
