@@ -16,7 +16,7 @@ const Layout = (props) => {
   if (typeof window !== 'undefined') {
     const mCurr = window.document.getElementsByClassName(`custom-cursor`)
 
-    const aLinks = window.document.querySelectorAll('.fx__cursor, .footer a')
+    const aLinks = window.document.querySelectorAll('.fx__cursor, .footer a, .page__content a')
     aLinks.forEach(element => {
 
       element.addEventListener(`mouseenter`, () => {
