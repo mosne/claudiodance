@@ -86,7 +86,6 @@ const FlexibleAcf = (props) => {
               return (
                 <div className='post__video' key={`acf-${post.id}-${i}`}>
                   <div className="inlinevideo">
-                    // eslint-disable-next-line jsx-a11y/media-has-caption
                     <video
                       autoPlay
                       playsInline
