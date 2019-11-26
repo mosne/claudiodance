@@ -21,23 +21,6 @@
  * </div>
  * </div>
  */
- @font-face {
-    font-family: "Favorit_n";
-    font-weight: normal;
-    font-style: normal;
-    font-stretch: normal;
-    font-display: swap;
-    src: url(/webfonts/FavoritStd-Light.woff2) format("woff2"), url(/webfonts/FavoritStd-Light.woff) format("woff");
-}
-
-@font-face {
-    font-family: "Favorit_l";
-    font-weight: normal;
-    font-style: normal;
-    font-stretch: normal;
-    font-display: swap;
-    src: url(/webfonts/FavoritLiningStd-Light.woff2) format("woff2"), url(/webfonts/FavoritLiningStd-Light.woff) format("woff");
-}
 
 $min_width: 320px;
 $max_width: 1880px;

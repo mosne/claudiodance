@@ -82,12 +82,14 @@ module.exports = {
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-transition-link`,
+    /*
     {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
         custom: { families: ['Favorit','Favorit_l'], urls: ['/webfonts/fonts.css']}
       }
     },
+    */
     {
       resolve: "gatsby-plugin-sass",
       options: {

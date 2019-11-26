@@ -1,8 +1,10 @@
 // custom typefaces
+import './static/webfonts/fonts.css'
+
+// sacss styles
 import './src/scss/style.scss'
 
 // custom cursor init
-
 if (typeof window !== 'undefined') {
 
   const currHtml = document.createElement('div')
