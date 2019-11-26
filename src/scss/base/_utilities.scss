@@ -24,3 +24,28 @@
     border-radius: 0;
     background: $darkcolor;
 }
+
+
+//selection
+::selection {
+    background-color: rgba(255,247,0,.99); /* WebKit/Blink Browsers */
+    color: $darkcolor;
+}
+::-moz-selection {
+	background-color: rgba(255,247,0,.99); /* Gecko Browsers */
+	color: $darkcolor;
+}
+.page ::selection {
+    background-color: rgba(0,0,0,.99); /* WebKit/Blink Browsers */
+    color: $maincolor;
+}
+.page ::-moz-selection {
+	background-color: rgba(0,0,0,.99); /* Gecko Browsers */
+	color: $maincolor;
+}
+img::selection{
+    background-color: transparent;
+    //color: $lightcolor;
+}
+
+
