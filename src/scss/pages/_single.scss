@@ -44,9 +44,11 @@
 				pointer-events: none;
 			}
 		}
-		.video-wrapper{
-			position: relative;
-			z-index: -1;
+		@include breakpoints(md){
+			.video-wrapper{
+				position: relative;
+				z-index: -1;
+			}
 		}
 	}
 	&__text{

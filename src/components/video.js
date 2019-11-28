@@ -26,7 +26,7 @@ export default class MosneVideo extends React.Component {
     // console.log(input, url)
     const pattern1 = /(?:http?s?:\/\/)?(?:www\.)?(?:vimeo\.com)\/?(.+)/g
     const pattern2 = /(?:http?s?:\/\/)?(?:www\.)?(?:youtube\.com|youtu\.be)\/(?:watch\?v=)?(.+)/g
-    const replacement1 = '//player.vimeo.com/video/$1' + '?background=1'
+    const replacement1 = '//player.vimeo.com/video/$1' + '?autoplay=1&loop=1"'
     const replacement2 = 'https://www.youtube.com/embed/$1' + '?rel=0&autoplay=1&mute=1&controls=0'
     if(pattern1.test(input)){
       // console.log(input, replacement1, pattern1)
@@ -74,7 +74,7 @@ export default class MosneVideo extends React.Component {
     )
 
     return (
-      <div className='post__video'>
+      <div className='post__video'onClick={() => this.toggleVideo()}>
         {this.state.video ? iframevideo : postervideo}
       </div>
     )
