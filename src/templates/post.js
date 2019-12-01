@@ -37,6 +37,7 @@ const PostTemplate = (props) => {
         fluid={featuredImage}
         title={post.title}
         alt={featuredImage.title}
+        fadeIn
         className="single__featured-image" 
       />
 
@@ -108,7 +109,7 @@ export const pageQuery = graphql`
         localFile {
           childImageSharp {
             fluid(maxWidth: 1800, quality: 90){
-            ...GatsbyImageSharpFluid_withWebp
+            ...GatsbyImageSharpFluid_withWebp_noBase64
             }
           }
           relativePath
@@ -129,7 +130,7 @@ export const pageQuery = graphql`
               localFile {
                 childImageSharp {
                   fluid(maxWidth: 1800, quality: 90){
-                  ...GatsbyImageSharpFluid_withWebp
+                  ...GatsbyImageSharpFluid_withWebp_noBase64
                   src
                   }
                 }
@@ -153,7 +154,7 @@ export const pageQuery = graphql`
               localFile {
                 childImageSharp {
                   fluid(maxWidth: 1800, quality: 90){
-                  ...GatsbyImageSharpFluid_withWebp
+                  ...GatsbyImageSharpFluid_withWebp_noBase64
                   }
                 }
                 relativePath
@@ -180,7 +181,7 @@ export const pageQuery = graphql`
               localFile {
                 childImageSharp {
                   fluid(maxWidth: 900, quality: 90){
-                  ...GatsbyImageSharpFluid_withWebp
+                  ...GatsbyImageSharpFluid_withWebp_noBase64
                   }
                 }
                 relativePath
@@ -194,7 +195,7 @@ export const pageQuery = graphql`
               localFile {
                 childImageSharp {
                   fluid(maxWidth: 900, quality: 90){
-                  ...GatsbyImageSharpFluid_withWebp
+                  ...GatsbyImageSharpFluid_withWebp_noBase64
                   }
                 }
                 relativePath
@@ -214,7 +215,7 @@ export const pageQuery = graphql`
               localFile {
                 childImageSharp {
                   fluid(maxWidth: 1800, quality: 90){
-                  ...GatsbyImageSharpFluid_withWebp
+                  ...GatsbyImageSharpFluid_withWebp_noBase64
                   }
                 }
                 relativePath

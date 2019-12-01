@@ -37,6 +37,7 @@ const FlexibleAcf = (props) => {
                           style={{maxWidth:imgSizes.full}}
                           fluid={img}
                           alt={photo.title}
+                          fadeIn
                           className="featured-image"
                         />}
                       </div>
@@ -60,12 +61,14 @@ const FlexibleAcf = (props) => {
                   {img && <Img
                     style={{maxWidth:imgSizes.half}}
                     fluid={img}
+                    fadeIn
                     alt={layout.image.title}
                     className="featured-image" />}
                   {img2 && <Img
                     style={{maxWidth:imgSizes.half}}
                     fluid={img2}
                     alt={layout.image_2.title}
+                    fadeIn
                     className="featured-image" />}
                 </div>
               )
@@ -113,6 +116,7 @@ const FlexibleAcf = (props) => {
                    url={layout.video_url}
                    size={imgSizes.full}
                    image={layout.image}
+                   fadeIn
                    key={`acf-${post.id}-${i}`}
                  />
               )
