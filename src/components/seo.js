@@ -71,7 +71,7 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           name: `theme-color`,
-          content: `#000000`,
+          content: `#FFF700`,
         },
       ].concat(meta)}
     >
