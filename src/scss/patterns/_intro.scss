@@ -12,6 +12,8 @@
         height: auto;
         // border: 1px solid red;
         margin-top:-2em;
+        position: relative;
+        z-index: -1;
     }
 
     &__text{
