@@ -4,19 +4,14 @@
 
 .intro{
     position:relative;
-    margin-bottom: 1em;
-    border-bottom: 1px solid $maincolor;
-    overflow: hidden;
-    
     &__svg{
         width: 100%;
         height: auto;
         // border: 1px solid red;
-        margin-top:-2em;
+        margin-top:-1em;
         position: relative;
         z-index: -1;
     }
-
     &__text{
         color:$darkcolor;
         z-index:5;
