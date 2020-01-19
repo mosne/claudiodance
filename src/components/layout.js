@@ -11,7 +11,7 @@ const Layout = (props) => {
   const rootPath = `${__PATH_PREFIX__}/`
   let header
 
-// cursors effects 
+// cursors effects
 
   if (typeof window !== 'undefined') {
     const mCurr = window.document.getElementsByClassName(`custom-cursor`)
@@ -39,7 +39,7 @@ const Layout = (props) => {
       // eslint-disable-next-line react/jsx-filename-extension
       <>
         <h1 className="header__logo visuallyhidden">
-          <AniLink 
+          <AniLink
             className="fx__cursor"
             paintDrip
             hex="#FFF700"

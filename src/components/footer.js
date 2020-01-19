@@ -67,7 +67,6 @@ const footerQuery = graphql`
       options {
         footer_1
         footer_2
-        footer_3
       }
     }
   }
