@@ -6,6 +6,7 @@
     position:relative;
     margin-bottom: 1em;
     border-bottom: 1px solid $maincolor;
+    overflow: hidden;
     
     &__svg{
         width: 100%;
