@@ -13,7 +13,7 @@ const PageTemplate = (props) => {
     // eslint-disable-next-line react/jsx-filename-extension
     <Layout location={props.location} title={siteTitle} aclass="page">
       <SEO
-        title={post.title}
+        title={post.yoast_title}
         description={post.excerpt}
       />
       <h1 className="visuallyhidden">{post.title} </h1>
@@ -37,6 +37,7 @@ export const pageQuery = graphql`
     wordpressPage(id: { eq: $id }) {
       slug
       title
+      yoast_title
       id
       # featured_media {
       #   source_url

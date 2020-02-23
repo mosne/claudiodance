@@ -2,9 +2,9 @@ const postCssPlugins = require('./postcss-config.js');
 
 module.exports = {
   siteMetadata: {
-    title: `Claudio Dance`,
+    title: `Dance Claudio Dance`,
     author: `Claudio Fabbro Graphic design and more`,
-    description: `A Gatsby WordPress Starter with special love for Netlify`,
+    description: `Milan based graphic designer and dancer`,
     siteUrl: `https://claudio.dance`,
     social: {
       twitter: `claudiodance`,
@@ -47,6 +47,7 @@ module.exports = {
           "/wp/v2/media",
           "/wp-api-menus/v2/menus",
           "/acf/v3/options/",
+          "/wp-rest-yoast-meta/v1"
           // "/wp/v2/tags",
           // "/wp/v2/taxonomies",
         ],
