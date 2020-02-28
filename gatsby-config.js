@@ -4,7 +4,7 @@ module.exports = {
   siteMetadata: {
     title: `Dance Claudio Dance`,
     author: `Claudio Fabbro Graphic design and more`,
-    description: `Milan based graphic designer and dancer`,
+    description: `Claudio is a Milan based graphic designer and dancer. He embraces an editorial approach that is characterized by rationality and attention to details. During his free time you can find him on the dance floor.`,
     siteUrl: `https://claudio.dance`,
     social: {
       twitter: `claudiodance`,
