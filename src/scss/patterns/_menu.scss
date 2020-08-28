@@ -20,7 +20,13 @@
  */
 
 .menu {
-		display: flex;
-		justify-content: space-between;
-		text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+    text-transform: uppercase;
+
+    &-nav {
+        max-width: 1880px;
+		margin: 0 auto;
+		padding: .5em;
+    }
 }

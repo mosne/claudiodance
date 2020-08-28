@@ -1,36 +1,44 @@
 /**
  * Header
  */
+ .tl-wrapper-status--entered{
+	 transform: unset !important;
+ }
 
 .header {
+    position: fixed;
+    width: 100vw;
+	left: 0;
+	top: 0;
+    z-index: 100000;
 
-	&__logo-link {
-		display: block;
-	}
+    &__logo-link {
+        display: block;
+    }
 
-	&__icon {
-		display: block;
-		height: 50px;
-		width: 50px;
-		margin: 0 auto 10px;
-		color: $textcolor;
-	}
+    &__icon {
+        display: block;
+        height: 50px;
+        width: 50px;
+        margin: 0 auto 10px;
+        color: $textcolor;
+    }
 
-	&__img {
-		@include img__responsive();
+    &__img {
+        @include img__responsive();
 
-		margin: 0 auto $base-spacing;
-	}
+        margin: 0 auto $base-spacing;
+    }
 
-	// Admin bar sample if header is fixed
-	// .admin-bar & {
-	// 	top: $wpadminbarM;
-	// 	@include breakpoints(md) {
-	// 		top: $wpadminbarD;
-	// 	}
-	// }
-	&__logo{
-		font-size: 1em;
-		text-transform: uppercase;
-	}
+    // Admin bar sample if header is fixed
+    // .admin-bar & {
+    // 	top: $wpadminbarM;
+    // 	@include breakpoints(md) {
+    // 		top: $wpadminbarD;
+    // 	}
+    // }
+    &__logo {
+        font-size: 1em;
+        text-transform: uppercase;
+    }
 }

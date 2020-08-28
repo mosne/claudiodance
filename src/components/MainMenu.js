@@ -21,7 +21,7 @@ function MainMenu() {
         // console.log(data.allWordpressWpApiMenusMenusItems)
 
         return (
-          <nav>
+          <nav className="menu-nav">
             <ul className="menu">
               {menuItems.map((item) =>
                 (<li key={item.object_slug}>
