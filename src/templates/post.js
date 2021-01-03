@@ -144,27 +144,6 @@ export const pageQuery = graphql`
               }
             }
           }
-          ... on WordPressAcf_video {
-            id
-            video_url
-            image {
-              id
-              title
-              alt_text
-              caption
-              localFile {
-                childImageSharp {
-                  fluid(maxWidth: 1800, quality: 90){
-                  ...GatsbyImageSharpFluid_withWebp_noBase64
-                  }
-                }
-                relativePath
-              }
-            }
-            internal {
-              type
-            }
-          }
           ... on WordPressAcf_text {
             id
             text
