@@ -106,20 +106,6 @@ const FlexibleAcf = (props) => {
                   </div>
                 </div>
               )
-            }else if (layout.__typename === `WordPressAcf_video`) {
-               /**
-               * Video
-               * */
-               return (
-                 <MosneVideo
-                   img={layout.image.localFile.childImageSharp.fluid}
-                   url={layout.video_url}
-                   size={imgSizes.full}
-                   image={layout.image}
-                   fadeIn
-                   key={`acf-${post.id}-${i}`}
-                 />
-              )
             }
           })
     }
