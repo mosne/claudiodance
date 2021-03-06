@@ -2,32 +2,36 @@
  * Hero
  */
 
-.intro{
-    position:relative;
-    margin-bottom:0;
-    &__svg{
+.intro {
+    position: relative;
+    margin-bottom: 0;
+
+    &__svg {
         width: 100%;
         height: auto;
         // border: 1px solid red;
-        margin-top:-1em;
+        margin-top: -1em;
         position: relative;
         z-index: -1;
     }
-    &__text{
-        color:$darkcolor;
-        z-index:5;
-        position:absolute;
-        top:0;
-        left:0;
+
+    &__text {
+        color: $darkcolor;
+        z-index: 5;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
     }
 }
 
 .intro__text,
-.project__list{
-font-size: 1.3em;
-line-height: 1.15em;
-text-transform: uppercase;
-@include breakpoints(sm){
-    font-size: 1.77em;
-}
+.project__list {
+    font-size: 1.3em;
+    line-height: 1.15em;
+    text-transform: uppercase;
+
+    @include breakpoints(sm) {
+        font-size: 1.77em;
+    }
 }
